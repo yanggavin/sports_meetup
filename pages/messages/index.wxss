@@ -1,1 +1,132 @@
-.page { padding-bottom: 120rpx; }
+.page {
+  background-color: #f6f7f8;
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx;
+  padding-bottom: 16rpx;
+  background-color: #f6f7f8;
+  border-bottom: 1rpx solid #e5e7eb;
+}
+
+.spacer {
+  width: 48rpx;
+}
+
+.add-btn {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-icon {
+  font-size: 48rpx;
+  color: #101822;
+}
+
+.search-container {
+  padding: 24rpx 32rpx;
+  background-color: #f6f7f8;
+  position: sticky;
+  top: 144rpx;
+  z-index: 10;
+}
+
+.search-bar {
+  height: 96rpx;
+  background-color: #e5e7eb;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 32rpx;
+  gap: 16rpx;
+}
+
+.search-icon {
+  font-size: 40rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #101822;
+}
+
+.conversations-list {
+  background-color: #f6f7f8;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  gap: 32rpx;
+  padding: 24rpx 32rpx;
+  background-color: #f6f7f8;
+  min-height: 144rpx;
+}
+
+.conv-avatar {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 999rpx;
+  background-color: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.conv-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  min-width: 0;
+}
+
+.conv-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #101822;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conv-preview {
+  font-size: 24rpx;
+  color: #6c757d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conv-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12rpx;
+  flex-shrink: 0;
+}
+
+.conv-time {
+  font-size: 24rpx;
+  color: #6c757d;
+}
+
+.unread-badge {
+  min-width: 48rpx;
+  height: 48rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background-color: #2f85ee;
+  color: #ffffff;
+  font-size: 20rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

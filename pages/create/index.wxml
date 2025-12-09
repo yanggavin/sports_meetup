@@ -1,27 +1,121 @@
-<view class="page p-24">
-  <view class="card mb-24">
-    <text class="h2 text-dark">发布活动</text>
-    <text class="caption text-secondary">填写信息并发布你的活动</text>
+<view class="page">
+  <!-- Top App Bar -->
+  <view class="top-bar">
+    <view class="back-btn" bindtap="onBack">
+      <text class="back-icon">←</text>
+    </view>
+    <text class="h4 font-bold text-dark">Create Event</text>
+    <view class="spacer-small"></view>
   </view>
-  <form bindsubmit="onSubmit">
-    <view class="card mb-24">
-      <view class="col gap-16">
-        <input name="title" placeholder="活动名称" class="body" />
-        <picker mode="selector" range="{{sports}}" name="sportType">
-          <view class="btn btn-tertiary">选择活动类型：{{sportTypeText}}</view>
+
+  <scroll-view scroll-y="true" class="form-container">
+    <!-- Event Details Section -->
+    <view class="form-section">
+      <text class="section-heading">Event Details</text>
+      
+      <view class="form-field">
+        <text class="field-label">Activity Name <text class="required">*</text></text>
+        <input 
+          class="field-input" 
+          placeholder="e.g., Morning Basketball Game" 
+          value="{{formData.title}}"
+          bindinput="onTitleInput"
+        />
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">Activity Type <text class="required">*</text></text>
+        <picker mode="selector" range="{{sports}}" value="{{sportIndex}}" bindchange="onSportChange">
+          <view class="field-picker">
+            <text class="picker-text">{{sports[sportIndex]}}</text>
+            <text class="picker-arrow">▼</text>
+          </view>
         </picker>
-        <picker mode="date" name="date">
-          <view class="btn btn-tertiary">选择日期：{{dateText}}</view>
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">Affiliated Club (Optional)</text>
+        <picker mode="selector" range="{{clubs}}" value="{{clubIndex}}" bindchange="onClubChange">
+          <view class="field-picker">
+            <text class="picker-text">{{clubs[clubIndex]}}</text>
+            <text class="picker-arrow">▼</text>
+          </view>
         </picker>
-        <picker mode="time" name="time">
-          <view class="btn btn-tertiary">选择时间：{{timeText}}</view>
-        </picker>
-        <input name="location" placeholder="地点" class="body" />
-        <input name="max" type="number" placeholder="最多参加人数" class="body" />
-        <textarea name="desc" placeholder="活动描述（可选）" class="body" />
       </view>
     </view>
-    <button formType="submit" class="btn btn-primary">发布活动</button>
-  </form>
-  <view style="height: 120rpx"></view>
+
+    <!-- Logistics Section -->
+    <view class="form-section">
+      <text class="section-heading">Logistics</text>
+      
+      <view class="form-row">
+        <view class="form-field half">
+          <text class="field-label">Date <text class="required">*</text></text>
+          <picker mode="date" value="{{formData.date}}" bindchange="onDateChange">
+            <view class="field-picker">
+              <text class="picker-text">{{formData.date || 'Select date'}}</text>
+            </view>
+          </picker>
+        </view>
+
+        <view class="form-field half">
+          <text class="field-label">Time <text class="required">*</text></text>
+          <picker mode="time" value="{{formData.time}}" bindchange="onTimeChange">
+            <view class="field-picker">
+              <text class="picker-text">{{formData.time || 'Select time'}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">Location <text class="required">*</text></text>
+        <view class="field-input-with-icon">
+          <text class="input-icon">📍</text>
+          <input 
+            class="field-input-icon" 
+            placeholder="Enter address or landmark" 
+            value="{{formData.location}}"
+            bindinput="onLocationInput"
+          />
+        </view>
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">Max Participants <text class="required">*</text></text>
+        <input 
+          class="field-input" 
+          type="number" 
+          placeholder="e.g., 10" 
+          value="{{formData.maxParticipants}}"
+          bindinput="onMaxParticipantsInput"
+        />
+      </view>
+    </view>
+
+    <!-- Description Section -->
+    <view class="form-section">
+      <text class="section-heading">Description</text>
+      
+      <view class="form-field">
+        <text class="field-label">Activity Description (Optional)</text>
+        <textarea 
+          class="field-textarea" 
+          placeholder="Add details like skill level, what to bring, rules, etc." 
+          value="{{formData.description}}"
+          bindinput="onDescriptionInput"
+        />
+      </view>
+    </view>
+
+    <!-- Bottom Spacer -->
+    <view style="height: 200rpx"></view>
+  </scroll-view>
+
+  <!-- Floating Publish Button -->
+  <view class="publish-bar">
+    <button class="btn-publish" bindtap="onPublish">
+      <text>Publish Event</text>
+    </button>
+  </view>
 </view>

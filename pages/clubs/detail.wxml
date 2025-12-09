@@ -1,11 +1,103 @@
-<view class="page p-24">
-  <view class="card mb-24">
-    <text class="h2 text-dark">俱乐部名称</text>
-    <text class="caption text-secondary">这里是俱乐部简介和信息</text>
+<view class="page">
+  <!-- Top Bar -->
+  <view class="top-bar">
+    <view class="back-btn" bindtap="onBack">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="spacer"></view>
+    <view class="share-btn" bindtap="onShare">
+      <text class="share-icon">↗</text>
+    </view>
   </view>
-  <view class="row gap-16">
-    <button class="btn btn-secondary">加入俱乐部</button>
-    <button class="btn btn-tertiary">联系管理员</button>
+
+  <!-- Image Carousel -->
+  <view class="carousel-container">
+    <swiper class="image-carousel" indicator-dots="false" autoplay="{{false}}" bindchange="onImageChange">
+      <block wx:for="{{club.images}}" wx:key="index">
+        <swiper-item>
+          <image class="carousel-image" src="{{item}}" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="image-indicator">
+      <text class="indicator-icon">📷</text>
+      <text>{{club.currentImageIndex + 1}}/{{club.images.length}}</text>
+    </view>
   </view>
-  <view style="height: 120rpx"></view>
+
+  <!-- Club Header with Avatar -->
+  <view class="club-header">
+    <view class="club-avatar-container">
+      <image class="club-avatar-large" src="{{club.avatar}}" mode="aspectFill"></image>
+    </view>
+    <view class="club-title-section">
+      <text class="club-name-large">{{club.name}}</text>
+      <text class="club-tagline">{{club.tagline}}</text>
+    </view>
+  </view>
+
+  <!-- Club Meta Info -->
+  <view class="club-meta-grid">
+    <view class="meta-card">
+      <view class="meta-card-content">
+        <text class="meta-card-icon">📍</text>
+        <text class="meta-card-text">{{club.location}}</text>
+      </view>
+    </view>
+    <view class="meta-card">
+      <view class="meta-card-content">
+        <text class="meta-card-icon">👥</text>
+        <text class="meta-card-text">{{club.members}} Members</text>
+      </view>
+    </view>
+    <view class="meta-card">
+      <view class="meta-card-content">
+        <text class="meta-card-icon">📅</text>
+        <text class="meta-card-text">{{club.upcomingEvents}} Upcoming</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- About Section (Collapsible) -->
+  <view class="about-section">
+    <view class="section-header">
+      <text class="section-title">About Our Club</text>
+      <text class="expand-icon">▼</text>
+    </view>
+    <view class="about-content">
+      <text class="about-text">{{club.description}}</text>
+    </view>
+  </view>
+
+  <!-- Upcoming Events -->
+  <view class="events-section">
+    <text class="section-title mb-16">Upcoming Events</text>
+    <view class="events-list-club">
+      <block wx:for="{{club.events}}" wx:key="id">
+        <view class="event-item-club" bindtap="onEventTap" data-id="{{item.id}}">
+          <view class="event-item-content">
+            <text class="event-item-title">{{item.title}}</text>
+            <text class="event-item-date">{{item.date}} @ {{item.time}}</text>
+            <text class="event-item-location">{{item.location}}</text>
+          </view>
+          <view class="event-item-arrow">
+            <text class="arrow-icon">→</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- Bottom Spacer -->
+  <view style="height: 200rpx"></view>
+
+  <!-- Sticky Action Bar -->
+  <view class="action-bar-club">
+    <button class="btn-club-message" bindtap="onMessageAdmin">
+      <text>Message Admin</text>
+    </button>
+    <button class="btn-club-join {{club.joined ? 'joined' : ''}}" bindtap="onJoinClub">
+      <text>{{club.joined ? 'Leave Club' : 'Join Club'}}</text>
+    </button>
+  </view>
 </view>

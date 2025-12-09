@@ -1,2 +1,237 @@
-.page { padding-bottom: 120rpx; }
-.avatar { width: 120rpx; height: 120rpx; border-radius: 60rpx; }
+.page {
+  background-color: #f6f7f8;
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx;
+  background-color: #f6f7f8;
+}
+
+.back-btn,
+.settings-btn {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon,
+.settings-icon {
+  font-size: 48rpx;
+  color: #101822;
+}
+
+.profile-container {
+  flex: 1;
+}
+
+/* Profile Header */
+.profile-header {
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.profile-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 32rpx;
+}
+
+.profile-avatar {
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 999rpx;
+  background-color: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.profile-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  justify-content: center;
+}
+
+.profile-name {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #101822;
+}
+
+.profile-bio {
+  font-size: 28rpx;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.btn-edit-profile {
+  width: 100%;
+  height: 80rpx;
+  border-radius: 24rpx;
+  background-color: #2f85ee;
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stats Container */
+.stats-container {
+  padding: 0 32rpx;
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 32rpx;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+}
+
+.stat-number {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #101822;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #6c757d;
+}
+
+/* Sections */
+.section {
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #101822;
+}
+
+.view-all-link {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #2f85ee;
+}
+
+/* Sports Tags */
+.sports-tags {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.sport-tag {
+  background-color: rgba(47, 133, 238, 0.2);
+  border-radius: 999rpx;
+  padding: 16rpx 32rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.sport-icon {
+  font-size: 32rpx;
+}
+
+.sport-name {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #2f85ee;
+}
+
+/* Event List */
+.event-list-profile,
+.club-list-profile {
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  padding: 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.event-item-profile,
+.club-item-profile {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+}
+
+.event-item-profile:active,
+.club-item-profile:active {
+  background-color: #f6f7f8;
+}
+
+.event-icon-container,
+.club-icon-container {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
+  background-color: rgba(47, 133, 238, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.event-icon,
+.club-icon {
+  font-size: 48rpx;
+}
+
+.event-info,
+.club-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.event-title,
+.club-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #101822;
+}
+
+.event-date,
+.club-members {
+  font-size: 24rpx;
+  color: #6c757d;
+}
+
+.chevron {
+  font-size: 48rpx;
+  color: #6c757d;
+  flex-shrink: 0;
+}

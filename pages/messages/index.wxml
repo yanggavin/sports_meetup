@@ -1,10 +1,40 @@
-<view class="page p-24">
-  <view class="card mb-24">
-    <text class="h2 text-dark">消息</text>
-    <text class="caption text-secondary">查看你的对话和通知</text>
+<view class="page">
+  <!-- Top Bar -->
+  <view class="top-bar">
+    <view class="spacer"></view>
+    <text class="h3 font-bold text-dark">Messages</text>
+    <view class="add-btn" bindtap="onNewMessage">
+      <text class="add-icon">+</text>
+    </view>
   </view>
-  <view class="card">
-    <text class="body text-secondary">消息列表即将上线</text>
+
+  <!-- Search Bar -->
+  <view class="search-container">
+    <view class="search-bar">
+      <text class="search-icon">🔍</text>
+      <input class="search-input" placeholder="Search Conversations" />
+    </view>
   </view>
-  <view style="height: 120rpx"></view>
+
+  <!-- Conversations List -->
+  <view class="conversations-list">
+    <block wx:for="{{conversations}}" wx:key="id">
+      <view class="conversation-item" bindtap="onConversationTap" data-id="{{item.id}}">
+        <image class="conv-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <view class="conv-content">
+          <text class="conv-name">{{item.name}}</text>
+          <text class="conv-preview">{{item.lastMessage}}</text>
+        </view>
+        <view class="conv-meta">
+          <text class="conv-time">{{item.timestamp}}</text>
+          <view wx:if="{{item.unreadCount > 0}}" class="unread-badge">
+            <text>{{item.unreadCount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- Bottom Spacer -->
+  <view style="height: 160rpx"></view>
 </view>

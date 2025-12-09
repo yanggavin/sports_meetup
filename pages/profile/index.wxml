@@ -1,57 +1,102 @@
-<view class="page p-24">
-  <view class="card mb-24 row gap-24 center">
-    <image class="avatar" src="https://dummyimage.com/120x120/2f80ed/ffffff&text=SM" mode="cover" />
-    <view class="col">
-      <text class="h2 text-dark">{{user.name}}</text>
-      <text class="caption text-secondary">{{user.bio}}</text>
+<view class="page">
+  <!-- Top Bar -->
+  <view class="top-bar">
+    <view class="back-btn">
+      <text class="back-icon">←</text>
+    </view>
+    <text class="h4 font-bold text-dark">My Profile</text>
+    <view class="settings-btn" bindtap="onSettings">
+      <text class="settings-icon">⚙</text>
     </view>
   </view>
 
-  <view class="card mb-24 row space-between">
-    <view class="col center">
-      <text class="h3 text-dark">{{stats.joined}}</text>
-      <text class="caption text-secondary">参加活动</text>
-    </view>
-    <view class="col center">
-      <text class="h3 text-dark">{{stats.clubs}}</text>
-      <text class="caption text-secondary">俱乐部</text>
-    </view>
-    <view class="col center">
-      <text class="h3 text-dark">{{stats.friends}}</text>
-      <text class="caption text-secondary">好友</text>
-    </view>
-  </view>
-
-  <view class="card mb-24">
-    <text class="h3 text-dark mb-16">偏好运动</text>
-    <view class="row gap-16 wrap">
-      <block wx:for="{{favoriteSports}}" wx:key="name">
-        <view class="chip chip-primary">
-          <text>{{item.name}} · {{item.count}}次</text>
+  <scroll-view scroll-y="true" class="profile-container">
+    <!-- Profile Header -->
+    <view class="profile-header">
+      <view class="profile-info">
+        <image class="profile-avatar" src="{{user.avatar}}" mode="aspectFill"></image>
+        <view class="profile-details">
+          <text class="profile-name">{{user.name}}</text>
+          <text class="profile-bio">{{user.bio}}</text>
         </view>
-      </block>
+      </view>
+      <button class="btn-edit-profile" bindtap="onEditProfile">
+        <text>Edit Profile</text>
+      </button>
     </view>
-  </view>
 
-  <view class="card mb-24">
-    <text class="h3 text-dark mb-16">我组织的活动</text>
-    <block wx:for="{{organizedEvents}}" wx:key="id">
-      <view class="row space-between mb-16">
-        <text class="body text-dark">{{item.title}}</text>
-        <text class="caption text-secondary">{{item.date}}</text>
+    <!-- Profile Stats -->
+    <view class="stats-container">
+      <view class="stat-card">
+        <text class="stat-number">{{user.stats.joinedActivities}}</text>
+        <text class="stat-label">Joined Activities</text>
       </view>
-    </block>
-  </view>
-
-  <view class="card mb-24">
-    <text class="h3 text-dark mb-16">我的俱乐部</text>
-    <block wx:for="{{clubs}}" wx:key="id">
-      <view class="row space-between mb-16">
-        <text class="body text-dark">{{item.name}}</text>
-        <text class="caption text-secondary">{{item.location}}</text>
+      <view class="stat-card">
+        <text class="stat-number">{{user.stats.clubs}}</text>
+        <text class="stat-label">Clubs</text>
       </view>
-    </block>
-  </view>
+      <view class="stat-card">
+        <text class="stat-number">{{user.stats.friends}}</text>
+        <text class="stat-label">Friends</text>
+      </view>
+    </view>
 
-  <view style="height: 120rpx"></view>
+    <!-- Favorite Sports -->
+    <view class="section">
+      <text class="section-title">Favorite Sports</text>
+      <view class="sports-tags">
+        <view wx:for="{{user.favoriteSports}}" wx:key="name" class="sport-tag">
+          <text class="sport-icon">{{item.icon}}</text>
+          <text class="sport-name">{{item.name}} · {{item.count}} times</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- My Organized Events -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">My Organized Events</text>
+        <text class="view-all-link" bindtap="onViewAllEvents">View All</text>
+      </view>
+      <view class="event-list-profile">
+        <block wx:for="{{user.organizedEvents}}" wx:key="id">
+          <view class="event-item-profile" bindtap="onEventTap" data-id="{{item.id}}">
+            <view class="event-icon-container">
+              <text class="event-icon">{{item.icon}}</text>
+            </view>
+            <view class="event-info">
+              <text class="event-title">{{item.title}}</text>
+              <text class="event-date">{{item.date}} · {{item.time}}</text>
+            </view>
+            <text class="chevron">›</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- My Joined Clubs -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">My Joined Clubs</text>
+        <text class="view-all-link" bindtap="onViewAllClubs">View All</text>
+      </view>
+      <view class="club-list-profile">
+        <block wx:for="{{user.joinedClubs}}" wx:key="id">
+          <view class="club-item-profile" bindtap="onClubTap" data-id="{{item.id}}">
+            <view class="club-icon-container">
+              <text class="club-icon">{{item.icon}}</text>
+            </view>
+            <view class="club-info">
+              <text class="club-name">{{item.name}}</text>
+              <text class="club-members">{{item.members}} Members</text>
+            </view>
+            <text class="chevron">›</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- Bottom Spacer -->
+    <view style="height: 160rpx"></view>
+  </scroll-view>
 </view>
