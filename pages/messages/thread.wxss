@@ -1,8 +1,8 @@
-.page { padding-bottom: 120rpx; }
-.chat { display: flex; flex-direction: column; gap: 16rpx; margin-bottom: 24rpx; }
-.bubble { max-width: 70%; padding: 16rpx; border-radius: 16rpx; }
-.bubble.left { align-self: flex-start; background-color: #FFFFFF; border: 1rpx solid #E5E5E5; }
-.bubble.right { align-self: flex-end; background: linear-gradient(180deg, #2F80ED 0%, #1366D6 100%); color: #FFFFFF; }
-.timestamp { display: block; margin-top: 8rpx; color: #A9A9A9; }
-.composer { position: fixed; left: 0; right: 0; bottom: 120rpx; padding: 16rpx; background-color: #F7F7F7; }
-.composer-input { flex: 1; background-color: #FFFFFF; border: 1rpx solid #E5E5E5; border-radius: 12rpx; padding: 16rpx; }
+.page { padding-bottom: 120rpx; background: var(--gradient-soft); min-height: 100vh; }
+.chat { display: flex; flex-direction: column; gap: 18rpx; margin-bottom: 24rpx; }
+.bubble { max-width: 72%; padding: 20rpx; border-radius: 20rpx; box-shadow: 0 12rpx 28rpx rgba(15, 23, 42, 0.08); }
+.bubble.left { align-self: flex-start; background-color: #ffffff; border: 1rpx solid rgba(47, 133, 238, 0.12); }
+.bubble.right { align-self: flex-end; background: var(--gradient-main); color: #ffffff; }
+.timestamp { display: block; margin-top: 10rpx; color: #A9A9A9; font-size: 22rpx; }
+.composer { position: fixed; left: 0; right: 0; bottom: 120rpx; padding: 16rpx; background: rgba(246, 247, 248, 0.92); backdrop-filter: blur(20rpx); border-top: 1rpx solid rgba(47, 133, 238, 0.12); }
+.composer-input { flex: 1; background-color: #ffffff; border: 1rpx solid rgba(47, 133, 238, 0.14); border-radius: 16rpx; padding: 16rpx; box-shadow: inset 0 1rpx 0 rgba(255, 255, 255, 0.6); }

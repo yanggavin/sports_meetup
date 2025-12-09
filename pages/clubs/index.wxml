@@ -8,6 +8,16 @@
     </view>
   </view>
 
+  <!-- Hero -->
+  <view class="hero-card card-elevated">
+    <view class="hero-copy">
+      <text class="hero-label pill">为你推荐</text>
+      <text class="hero-title">和同好一起训练与比赛</text>
+      <text class="hero-subtitle">发现附近的俱乐部，结识同城玩家</text>
+    </view>
+    <view class="hero-emoji">🤝</view>
+  </view>
+
   <!-- Search Bar -->
   <view class="search-container">
     <view class="search-bar">
@@ -57,17 +67,17 @@
             </view>
           </view>
           <view class="club-meta">
-            <view class="meta-item">
+            <view class="meta-item pill">
               <text class="meta-icon">📍</text>
               <text class="meta-text">{{item.location}}</text>
             </view>
-            <view class="meta-item">
+            <view class="meta-item pill">
               <text class="meta-icon">👥</text>
               <text class="meta-text">{{item.members}} 名成员</text>
             </view>
-            <view class="meta-item">
+            <view class="meta-item pill">
               <text class="meta-icon">📅</text>
-              <text class="meta-text">{{item.events}} 个即将开始的活动</text>
+              <text class="meta-text">{{item.events}} 个活动</text>
             </view>
             <button class="btn-club-action {{item.joined ? 'btn-club-joined' : 'btn-club-join'}}" catchtap="onJoinClub" data-id="{{item.id}}">
               <text>{{item.joined ? '已加入' : '加入俱乐部'}}</text>

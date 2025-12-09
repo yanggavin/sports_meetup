@@ -18,17 +18,25 @@
 
   <scroll-view wx:if="{{!loading}}" scroll-y="true" class="profile-container">
     <!-- Profile Header -->
-    <view class="profile-header">
-      <view class="profile-info">
-        <image class="profile-avatar" src="{{user.avatar}}" mode="aspectFill"></image>
-        <view class="profile-details">
-          <text class="profile-name">{{user.name}}</text>
-          <text class="profile-bio">{{user.bio}}</text>
+    <view class="profile-hero card-elevated">
+      <view class="profile-header">
+        <view class="profile-info">
+          <image class="profile-avatar" src="{{user.avatar}}" mode="aspectFill"></image>
+          <view class="profile-details">
+            <view class="row items-center gap-12">
+              <text class="profile-name">{{user.name}}</text>
+              <view class="pill profile-badge">活跃 · 本周</view>
+            </view>
+            <text class="profile-bio">{{user.bio}}</text>
+          </view>
         </view>
+        <button class="btn-edit-profile" bindtap="onEditProfile">
+          <text>编辑资料</text>
+        </button>
       </view>
-      <button class="btn-edit-profile" bindtap="onEditProfile">
-        <text>编辑资料</text>
-      </button>
+      <view class="profile-highlight">
+        <text>保持节奏，已经连续参加 {{user.stats.joinedActivities}} 次活动</text>
+      </view>
     </view>
 
     <!-- Profile Stats -->

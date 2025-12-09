@@ -11,7 +11,13 @@
   </view>
 
   <!-- Header Image -->
-  <view class="header-image" style="background-image: url('{{event.image}}')"></view>
+  <view class="header-image" style="background-image: url('{{event.image}}')">
+    <view class="header-gradient"></view>
+    <view class="header-badge pill">
+      <text class="badge-icon">📍</text>
+      <text class="badge-text">{{event.location}}</text>
+    </view>
+  </view>
 
   <!-- Event Title -->
   <view class="event-title-section">

@@ -8,6 +8,16 @@
     </view>
   </view>
 
+  <!-- Hero -->
+  <view class="hero-card card-elevated">
+    <view class="hero-copy">
+      <text class="hero-label pill">互动中心</text>
+      <text class="hero-title">与队友保持联系</text>
+      <text class="hero-subtitle">快速找到最近的会话和未读提醒</text>
+    </view>
+    <view class="hero-emoji">💬</view>
+  </view>
+
   <!-- Search Bar -->
   <view class="search-container">
     <view class="search-bar">

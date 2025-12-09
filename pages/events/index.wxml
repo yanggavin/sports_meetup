@@ -6,6 +6,16 @@
     <view class="spacer"></view>
   </view>
 
+  <!-- Hero -->
+  <view class="hero-card card-elevated">
+    <view class="hero-copy">
+      <text class="hero-label pill">本周精选</text>
+      <text class="hero-title">发现附近的运动活动</text>
+      <text class="hero-subtitle">根据你的偏好推荐，快速报名一起玩</text>
+    </view>
+    <view class="hero-visual"></view>
+  </view>
+
   <!-- 运动类型筛选 -->
   <scroll-view scroll-x="true" class="filter-container">
     <view class="filter-chips">
@@ -38,7 +48,7 @@
   <!-- 活动列表 -->
   <view wx:if="{{!loading}}" class="events-list">
     <block wx:for="{{events}}" wx:key="id">
-      <view class="event-card" bindtap="onViewDetail" data-id="{{item.id}}">
+      <view class="event-card card-glass" bindtap="onViewDetail" data-id="{{item.id}}">
         <view class="event-header">
           <view class="row items-center gap-16 flex-1">
             <view class="sport-icon-container">
@@ -46,7 +56,11 @@
             </view>
             <view class="flex-1">
               <text class="event-title">{{item.title}}</text>
-              <text class="event-club">{{item.clubName || '公开活动'}}</text>
+              <view class="row items-center gap-8">
+                <text class="event-club">{{item.clubName || '公开活动'}}</text>
+                <view class="micro-dot"></view>
+                <text class="event-meta">{{item.dateTime}}</text>
+              </view>
             </view>
           </view>
           <button class="btn {{item.joined ? 'btn-joined' : 'btn-join'}}" catchtap="onJoinTap" data-id="{{item.id}}" disabled="{{!item.joined && item.disableJoin}}">
@@ -54,10 +68,6 @@
           </button>
         </view>
         <view class="event-details">
-          <view class="detail-row">
-            <text class="detail-icon">📅</text>
-            <text>{{item.dateTime}}</text>
-          </view>
           <view class="detail-row">
             <text class="detail-icon">📍</text>
             <text>{{item.location}}</text>

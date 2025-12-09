@@ -1,5 +1,4 @@
 .page {
-  background-color: #f6f7f8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,8 +10,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 32rpx;
-  background-color: #f6f7f8;
-  border-bottom: 1rpx solid #e5e7eb;
+  background: linear-gradient(180deg, rgba(246, 247, 248, 0.96) 0%, rgba(246, 247, 248, 0.86) 100%);
+  border-bottom: 1rpx solid rgba(47, 133, 238, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -39,12 +38,17 @@
 .form-container {
   flex: 1;
   padding-bottom: 200rpx;
+  padding-top: 12rpx;
 }
 
 /* Form Section */
 .form-section {
   padding: 32rpx;
   margin-bottom: 16rpx;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 28rpx;
+  box-shadow: 0 16rpx 44rpx rgba(15, 23, 42, 0.08);
+  border: 1rpx solid rgba(47, 133, 238, 0.12);
 }
 
 .section-heading {
