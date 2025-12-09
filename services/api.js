@@ -9,6 +9,8 @@ const mockEvents = [
     maxParticipants: 12,
     organizer: '陈晨',
     sportIcon: '🏸',
+    sportType: '羽毛球',
+    dayOfWeek: '周二',
     joined: false,
     status: 'active'
   },
@@ -22,6 +24,8 @@ const mockEvents = [
     maxParticipants: 40,
     organizer: '赵敏',
     sportIcon: '🏃',
+    sportType: '跑步',
+    dayOfWeek: '周三',
     joined: true,
     status: 'active'
   },
@@ -35,6 +39,8 @@ const mockEvents = [
     maxParticipants: 20,
     organizer: '李想',
     sportIcon: '🚴',
+    sportType: '骑行',
+    dayOfWeek: '周四',
     joined: false,
     status: 'cancelled'
   },
@@ -48,8 +54,70 @@ const mockEvents = [
     maxParticipants: 24,
     organizer: '高远',
     sportIcon: '🥾',
+    sportType: '登山',
+    dayOfWeek: '周日',
     joined: false,
     status: 'completed'
+  },
+  {
+    id: 'e5',
+    title: '周六羽毛球团体赛',
+    clubName: '城市羽球社',
+    dateTime: '12月14日 15:00',
+    location: '徐汇体育中心',
+    participants: 10,
+    maxParticipants: 16,
+    organizer: '王芳',
+    sportIcon: '🏸',
+    sportType: '羽毛球',
+    dayOfWeek: '周六',
+    joined: false,
+    status: 'active'
+  },
+  {
+    id: 'e6',
+    title: '周一晨跑打卡',
+    clubName: '城市跑团',
+    dateTime: '12月16日 06:00',
+    location: '滨江绿道',
+    participants: 5,
+    maxParticipants: 15,
+    organizer: '赵敏',
+    sportIcon: '🏃',
+    sportType: '跑步',
+    dayOfWeek: '周一',
+    joined: false,
+    status: 'active'
+  },
+  {
+    id: 'e7',
+    title: '周五夜骑环湖',
+    clubName: '夜骑联盟',
+    dateTime: '12月13日 19:30',
+    location: '东湖公园',
+    participants: 8,
+    maxParticipants: 12,
+    organizer: '李想',
+    sportIcon: '🚴',
+    sportType: '骑行',
+    dayOfWeek: '周五',
+    joined: false,
+    status: 'active'
+  },
+  {
+    id: 'e8',
+    title: '周日登山活动',
+    clubName: '山野探索俱乐部',
+    dateTime: '12月15日 08:00',
+    location: '云峰山',
+    participants: 12,
+    maxParticipants: 20,
+    organizer: '高远',
+    sportIcon: '🥾',
+    sportType: '登山',
+    dayOfWeek: '周日',
+    joined: false,
+    status: 'active'
   }
 ];
 
@@ -67,9 +135,12 @@ const mockClubs = [
     name: '日出跑团',
     description: '清晨 5 公里晨跑，适合所有水平。',
     location: '世纪公园',
+    city: '上海',
     members: 85,
     events: 2,
     avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Run',
+    sportType: '跑步',
+    sportIcon: '🏃',
     joined: false
   },
   {
@@ -77,9 +148,12 @@ const mockClubs = [
     name: '中心网球社',
     description: '周末双打 + 友谊赛，欢迎新手。',
     location: '城市体育公园',
+    city: '上海',
     members: 120,
     events: 3,
     avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Tennis',
+    sportType: '网球',
+    sportIcon: '🎾',
     joined: true
   },
   {
@@ -87,9 +161,12 @@ const mockClubs = [
     name: '城市篮球联盟',
     description: '每周 5v5 野球，组队对抗。',
     location: '市民体育中心',
+    city: '北京',
     members: 45,
     events: 5,
     avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Hoops',
+    sportType: '篮球',
+    sportIcon: '🏀',
     joined: false
   },
   {
@@ -97,10 +174,65 @@ const mockClubs = [
     name: '周末骑行队',
     description: '城市环骑 + 咖啡打卡。',
     location: '滨江步道',
+    city: '上海',
     members: 210,
     events: 1,
     avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Ride',
+    sportType: '骑行',
+    sportIcon: '🚴',
     joined: true
+  },
+  {
+    id: 'c5',
+    name: '城市羽球社',
+    description: '从入门到高手，全面提升球技。',
+    location: '徐汇体育中心',
+    city: '上海',
+    members: 150,
+    events: 6,
+    avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Badminton',
+    sportType: '羽毛球',
+    sportIcon: '🏸',
+    joined: false
+  },
+  {
+    id: 'c6',
+    name: '山野探索俱乐部',
+    description: '周末登山、徒步，探索大自然。',
+    location: '云峰山',
+    city: '杭州',
+    members: 95,
+    events: 4,
+    avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Hike',
+    sportType: '登山',
+    sportIcon: '🥾',
+    joined: false
+  },
+  {
+    id: 'c7',
+    name: '北京跑团',
+    description: '京城跑者聚集地，每周三次团跑。',
+    location: '奥林匹克公园',
+    city: '北京',
+    members: 180,
+    events: 8,
+    avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Run',
+    sportType: '跑步',
+    sportIcon: '🏃',
+    joined: false
+  },
+  {
+    id: 'c8',
+    name: '足球之友',
+    description: '业余足球联赛，每周对抗赛。',
+    location: '上体足球场',
+    city: '上海',
+    members: 68,
+    events: 3,
+    avatar: 'https://dummyimage.com/200x200/f6f7f8/2f85ee&text=Soccer',
+    sportType: '足球',
+    sportIcon: '⚽',
+    joined: false
   }
 ];
 

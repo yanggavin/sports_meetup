@@ -163,12 +163,23 @@
   box-shadow: 0 10rpx 24rpx rgba(15, 23, 42, 0.06);
 }
 
+.chip-filter-active {
+  background: #2f85ee;
+  color: #ffffff;
+  font-weight: 600;
+  border: 1rpx solid #2f85ee;
+}
+
 .filter-arrow {
   font-size: 20rpx;
   color: #6c757d;
 }
 
 .filter-icon {
+  font-size: 28rpx;
+}
+
+.sport-emoji {
   font-size: 28rpx;
 }
 

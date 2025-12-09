@@ -21,8 +21,11 @@ Page({
       { name: '周日', selected: false },
       { name: '下周', selected: false }
     ],
-    events: [],
-    loading: true
+    allEvents: [], // Store all events
+    events: [], // Filtered events
+    loading: true,
+    selectedSportFilter: '全部',
+    selectedDateFilter: '全部'
   },
   onLoad() {
     this.fetchEvents();
@@ -30,8 +33,10 @@ Page({
   fetchEvents() {
     this.setData({ loading: true });
     getEvents().then(events => {
+      const decoratedEvents = events.map(ev => this.decorateEvent(ev));
       this.setData({
-        events: events.map(ev => this.decorateEvent(ev)),
+        allEvents: decoratedEvents,
+        events: decoratedEvents,
         loading: false
       });
     });
@@ -45,17 +50,47 @@ Page({
     const sports = this.data.sportFilters.map((s, idx) => ({ ...s, selected: idx === i }))
     this.setData({ sportFilters: sports })
     const selected = sports[i].name
+    
     if (selected === '更多') {
       wx.showToast({ title: '更多运动类型即将上线', icon: 'none' })
-    } else {
-      wx.showToast({ title: `筛选：${selected}`, icon: 'none' })
+      return
     }
+    
+    this.setData({ selectedSportFilter: selected })
+    this.applyFilters()
   },
   onDateSelect(e) {
     const i = e.currentTarget.dataset.index
     const dates = this.data.dateFilters.map((d, idx) => ({ ...d, selected: idx === i }))
     this.setData({ dateFilters: dates })
-    wx.showToast({ title: `日期：${dates[i].name}`, icon: 'none' })
+    const selected = dates[i].name
+    
+    this.setData({ selectedDateFilter: selected })
+    this.applyFilters()
+  },
+  applyFilters() {
+    const { allEvents, selectedSportFilter, selectedDateFilter } = this.data
+    
+    let filtered = allEvents
+    
+    // Apply sport filter
+    if (selectedSportFilter !== '全部') {
+      filtered = filtered.filter(event => event.sportType === selectedSportFilter)
+    }
+    
+    // Apply date filter
+    if (selectedDateFilter !== '全部' && selectedDateFilter !== '下周') {
+      filtered = filtered.filter(event => event.dayOfWeek === selectedDateFilter)
+    }
+    
+    this.setData({ events: filtered })
+    
+    const count = filtered.length
+    const filterMsg = selectedSportFilter === '全部' && selectedDateFilter === '全部' 
+      ? '显示所有活动'
+      : `找到 ${count} 个活动`
+    
+    wx.showToast({ title: filterMsg, icon: 'none', duration: 1000 })
   },
   onJoinTap(e) {
     const id = e.currentTarget.dataset.id

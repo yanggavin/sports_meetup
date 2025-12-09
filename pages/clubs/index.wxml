@@ -29,22 +29,22 @@
   <!-- Filter Chips -->
   <scroll-view scroll-x="true" class="filter-container">
     <view class="filter-chips">
-      <view class="chip-filter">
-        <text>运动类型</text>
-        <text class="filter-arrow">▼</text>
-      </view>
-      <view class="chip-filter">
-        <text>城市</text>
-        <text class="filter-arrow">▼</text>
-      </view>
-      <view class="chip-filter">
-        <text>成员规模</text>
-        <text class="filter-arrow">▼</text>
-      </view>
-      <view class="chip-filter">
-        <text class="filter-icon">⚙</text>
-        <text>全部筛选</text>
-      </view>
+      <block wx:for="{{sportFilters}}" wx:key="name">
+        <view class="chip-filter {{item.selected ? 'chip-filter-active' : ''}}" bindtap="onSportSelect" data-index="{{index}}">
+          <text class="sport-emoji">{{item.icon}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <scroll-view scroll-x="true" class="filter-container" style="padding-bottom: 24rpx;">
+    <view class="filter-chips">
+      <block wx:for="{{cityFilters}}" wx:key="name">
+        <view class="chip-filter {{item.selected ? 'chip-filter-active' : ''}}" bindtap="onCitySelect" data-index="{{index}}">
+          <text>{{item.name}}</text>
+        </view>
+      </block>
     </view>
   </scroll-view>
 
