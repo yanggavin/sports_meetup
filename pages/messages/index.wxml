@@ -1,0 +1,10 @@
+<view class="page p-24">
+  <view class="card mb-24">
+    <text class="h2 text-dark">消息</text>
+    <text class="caption text-secondary">查看你的对话和通知</text>
+  </view>
+  <view class="card">
+    <text class="body text-secondary">消息列表即将上线</text>
+  </view>
+  <view style="height: 120rpx"></view>
+</view>

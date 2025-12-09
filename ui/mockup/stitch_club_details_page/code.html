@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Badminton Club Detail Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2f85ee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+      .snap-x {
+        scroll-snap-type: x mandatory;
+      }
+      .snap-start {
+        scroll-snap-align: start;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative min-h-screen w-full flex-col">
+<div class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 p-4 pb-2 backdrop-blur-sm dark:bg-background-dark/80">
+<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-[#0d141b] dark:text-slate-50">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent text-[#0d141b] dark:text-slate-50">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+</div>
+<main class="flex flex-col">
+<div class="relative w-full">
+<div class="flex snap-x snap-mandatory overflow-x-auto">
+<div class="h-64 w-full flex-shrink-0 snap-start bg-cover bg-center" data-alt="Dynamic shot of a badminton shuttlecock in mid-air over a net." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACfzC5nQ62UIStUbFX7WiG_E40lmiHaulyD8TtGaZN4asHRfKXUTRn1QXaqQc7CP7Ky6ThN_4VBRcpmBrJPRvJAR29qaM1XhK2tleke-H2sBdvB_0an0Z-a9WJTYsxbidIzzFvTlShXy5eowYJ-sHq4vls5bPPY2oTNw5OzBdIkiaR7RjTE1A7eRjC96b2CEmnJNuIU0LTT9f0-bNpLo-MAx_2Kuah7qyw1OTjwb2MqyhLhdu7x-kBFE1qiRl5Cmb5fsAztCxZBFk');"></div>
+<div class="h-64 w-full flex-shrink-0 snap-start bg-cover bg-center" data-alt="Group of players smiling on a badminton court." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWy8Hw2BxVCEH7fCwo9h-_BkxITjBH9xRTsZaKzdspZE4nZDBCo7ktBft7StW-xEUKtJKooZstGV7fgQIYGsy1gmlHIx_UrsdF0F45K2gUq5nplBHRiz9DkZOcjgVXI_bEpm6fQ8p2qmIpMPW8h2DjXiqmDuvH-Te-yhrHmNIkribpbOCUkWKNiL-OaEMUFo0pekbWRPo5z4_OuUzRj-P78q_RTyG8K5JNpI1z5d7lq3u-laBM12M1TUYTucbLs625_mzEzXoL2fk');"></div>
+<div class="h-64 w-full flex-shrink-0 snap-start bg-cover bg-center" data-alt="Close-up of a player's hand holding a badminton racket and shuttlecock." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFg2v-9u6JZvaKjpXqc3LfdsRXlysCP6PUAyTjksayg-VPHt8GlLOFifsLKAhKTxPZWr39Z2zWUFosMKp-r2zjlB5PoDoKhgychdtBkm_nliPCcjGPIDJCw0PEBX2N6xIXrxtqQaMz8y1gx23aG8E0i7S5BQwnzSWf07_EoRvJR4QnXpeRXXoTJulq81ZW94rIYpQ7YmBrm3LBhmWe1Tdm-ZCDk3V7A1uW9i2ePCXsXsDgh1_Aw-X2Whoh9F-Wf-ai7LTbC66TRGE');"></div>
+<div class="h-64 w-full flex-shrink-0 snap-start bg-cover bg-center" data-alt="Players in the middle of a fast-paced doubles match." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAO1kvWAPiMw-SQMpzTccRbH_-HB8XxT6iwjLa_FQ8NYaAzEeCRW3YJBwc9zy9dLE9Mbl8EHGlqMiNlxp49XF7nbNgHhVCV4OQK4MtA6mND5Rta15itjKlqjsI-Y3Jx8f2L2lMgfEYmdduVKawbzo5nA86SPUHaMjEZFe-2QVo0duwjyW2Jpotr5rOgFG--uUHJCcGSybPIw2PAx6btKunnAm7EkhXADUrfgts-Ufhf4yJLNpqUpuO4bgFIyK9qdJyU6nAU1gZOBvE');"></div>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center justify-center rounded-full bg-black/50 px-3 py-1 text-sm text-white">
+<span class="material-symbols-outlined mr-1 text-base">photo_camera</span>
+<span>1/4</span>
+</div>
+</div>
+<div class="flex p-4 @container -mt-16">
+<div class="flex w-full flex-col items-start gap-4">
+<div class="flex flex-col items-start gap-4">
+<div class="aspect-square w-32 min-h-32 rounded-full border-4 border-background-light bg-cover bg-center dark:border-background-dark" data-alt="Stylized badminton birdie logo for the club." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcY8UNhKuaZIqv27PRTy8YL51jZeNUWTPzNuB8jJEqRpDV67XcB3kNGUNmMSfHANY83I6XcTzSoD_-iDUGB7dk_lXVoj4rvSBdVCskihQIluBvU90euHsQSs1YeMKaTk1S1SIkJNbxNULHF_z4-DIv1cenyYi_EvRNh-RDSOMA9dDoFytE4k4ceT30zPRLQCQ-TwjkrvkG1nSyAAMb90CJpZmiSy8JHCXM1YDUIv63iqj_NEDdeWjG_ePZ7WVqFpqsrw5YejLVAxE');"></div>
+<div class="flex flex-col justify-center">
+<p class="text-[22px] font-bold leading-tight tracking-[-0.015em] text-[#0d141b] dark:text-slate-50">City Badminton Enthusiasts</p>
+<p class="text-base font-normal leading-normal text-[#4c6f9a] dark:text-slate-400">Serve, Smash, Connect!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 px-4 py-3">
+<div class="flex flex-1 basis-[fit-content] flex-col items-start gap-2 rounded-lg border border-[#cfdae7] p-3 dark:border-slate-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary">location_on</span>
+<p class="text-sm font-normal leading-normal text-[#4c6f9a] dark:text-slate-400">Shanghai, Xuhui</p>
+</div>
+</div>
+<div class="flex flex-1 basis-[fit-content] flex-col items-start gap-2 rounded-lg border border-[#cfdae7] p-3 dark:border-slate-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary">group</span>
+<p class="text-sm font-normal leading-normal text-[#4c6f9a] dark:text-slate-400">150 Members</p>
+</div>
+</div>
+<div class="flex flex-1 basis-[fit-content] flex-col items-start gap-2 rounded-lg border border-[#cfdae7] p-3 dark:border-slate-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary">event</span>
+<p class="text-sm font-normal leading-normal text-[#4c6f9a] dark:text-slate-400">6 Upcoming</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4">
+<details class="group flex flex-col rounded-xl bg-[#e7edf3] dark:bg-slate-800" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
+<p class="text-base font-medium leading-normal text-[#0d141b] dark:text-slate-50">About Our Club</p>
+<span class="material-symbols-outlined text-[#0d141b] transition-transform group-open:rotate-180 dark:text-slate-50">expand_more</span>
+</summary>
+<div class="px-4 pb-4">
+<p class="text-sm font-normal leading-normal text-[#4c6f9a] dark:text-slate-400">Welcome to the City Badminton Enthusiasts! We are a friendly and active club for players of all skill levels, from complete beginners to advanced competitors. Our mission is to create a fun, supportive environment where everyone can enjoy the game, improve their skills, and connect with fellow badminton lovers. We organize regular weekly social games, training sessions, and friendly tournaments.</p>
+</div>
+</details>
+</div>
+<div class="flex flex-col gap-4 p-4">
+<h2 class="text-lg font-bold text-[#0d141b] dark:text-slate-50">Upcoming Events</h2>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-white p-4 dark:bg-slate-800">
+<div class="flex flex-col items-start">
+<p class="font-semibold text-gray-800 dark:text-gray-100">Weekly Social Game</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Sat, 20 Jul @ 7:00 PM</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Xuhui Sports Center</p>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+<div class="flex items-center justify-between gap-4 rounded-xl bg-white p-4 dark:bg-slate-800">
+<div class="flex flex-col items-start">
+<p class="font-semibold text-gray-800 dark:text-gray-100">Beginner's Training Session</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Sun, 21 Jul @ 10:00 AM</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Jing'an Gymnasium</p>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+<div class="flex items-center justify-between gap-4 rounded-xl bg-white p-4 dark:bg-slate-800">
+<div class="flex flex-col items-start">
+<p class="font-semibold text-gray-800 dark:text-gray-100">Doubles Mini-Tournament</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Sat, 27 Jul @ 2:00 PM</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Luwan Badminton Hall</p>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<div class="sticky bottom-0 mt-auto flex w-full flex-col gap-3 bg-background-light/80 p-4 backdrop-blur-sm dark:bg-background-dark/80">
+<div class="flex w-full max-w-[480px] gap-3">
+<button class="flex h-12 flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary/20 px-4 text-primary dark:bg-primary/30 dark:text-slate-50">
+<span class="truncate text-base font-bold">Message Admin</span>
+</button>
+<button class="flex h-12 flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary px-4 text-slate-50">
+<span class="truncate text-base font-bold">Join Club</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>

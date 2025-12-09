@@ -1,0 +1,27 @@
+<view class="page p-24">
+  <view class="card mb-24">
+    <text class="h2 text-dark">发布活动</text>
+    <text class="caption text-secondary">填写信息并发布你的活动</text>
+  </view>
+  <form bindsubmit="onSubmit">
+    <view class="card mb-24">
+      <view class="col gap-16">
+        <input name="title" placeholder="活动名称" class="body" />
+        <picker mode="selector" range="{{sports}}" name="sportType">
+          <view class="btn btn-tertiary">选择活动类型：{{sportTypeText}}</view>
+        </picker>
+        <picker mode="date" name="date">
+          <view class="btn btn-tertiary">选择日期：{{dateText}}</view>
+        </picker>
+        <picker mode="time" name="time">
+          <view class="btn btn-tertiary">选择时间：{{timeText}}</view>
+        </picker>
+        <input name="location" placeholder="地点" class="body" />
+        <input name="max" type="number" placeholder="最多参加人数" class="body" />
+        <textarea name="desc" placeholder="活动描述（可选）" class="body" />
+      </view>
+    </view>
+    <button formType="submit" class="btn btn-primary">发布活动</button>
+  </form>
+  <view style="height: 120rpx"></view>
+</view>

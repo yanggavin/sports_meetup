@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Overview Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2f85ee",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101822",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center justify-start text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">My Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-slate-900 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+</div>
+<!-- Profile Header -->
+<div class="flex p-4 @container">
+<div class="flex w-full flex-col gap-4 items-start">
+<div class="flex gap-4 flex-row items-center w-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24 shrink-0" data-alt="User avatar of Alex Johnson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0yZ79h8cvs9tBSg16pg9WcWI_D-9iVgXT4AE8BeZ7RYkuPEXiQpr9MXeq8to9Fa40jXDQ8aLd9DjqdvD9qx6zaypflQ8tuw0wd-0wFh73SU9FJocrX0nEiyWBvWZM2Cz2wxO_vJjypJBkGRMCu3hVg9RMVjkFeMJMrUgfvYClIiJjdZeunj5fkxgKebYqmvkFP0JYtY2pZbqPBNINtcw2BQjyck_ofbyTjl6EGN6rpGFoHF2grM7gU8RYbJbSkKuHojgHIRFKEgo");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Alex Johnson</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Lover of all things outdoors. San Francisco, CA.</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[480px] @[480px]:w-auto">
+<span class="truncate">Edit Profile</span>
+</button>
+</div>
+</div>
+<!-- Profile Stats -->
+<div class="flex flex-wrap gap-3 px-4 py-3">
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl bg-white dark:bg-slate-800 p-4 items-start">
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">15</p>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Joined Activities</p>
+</div>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl bg-white dark:bg-slate-800 p-4 items-start">
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">8</p>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Clubs</p>
+</div>
+</div>
+<div class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl bg-white dark:bg-slate-800 p-4 items-start">
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">27</p>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Friends</p>
+</div>
+</div>
+</div>
+<!-- Favorite Sports Section -->
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Favorite Sports</h2>
+<div class="flex gap-2 p-4 pt-0 overflow-x-auto">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-4 pr-4">
+<p class="text-primary dark:text-sky-300 text-sm font-medium leading-normal">🏸 Badminton · 12 times</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-4 pr-4">
+<p class="text-primary dark:text-sky-300 text-sm font-medium leading-normal">⚽ Soccer · 8 times</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-4 pr-4">
+<p class="text-primary dark:text-sky-300 text-sm font-medium leading-normal">🏀 Basketball · 5 times</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-4 pr-4">
+<p class="text-primary dark:text-sky-300 text-sm font-medium leading-normal">🏃 Running · 3 times</p>
+</div>
+</div>
+<!-- My Organized Events Section -->
+<div class="px-4 py-2">
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">My Organized Events</h2>
+<button class="text-primary dark:text-sky-400 text-sm font-medium">View All</button>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-2 flex flex-col gap-1">
+<a class="flex items-center p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50" href="#">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20 mr-4">
+<span class="material-symbols-outlined text-primary text-2xl">directions_run</span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Golden Gate Park Run</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Sat, Oct 28 · 9:00 AM</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">chevron_right</span>
+</a>
+<a class="flex items-center p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50" href="#">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20 mr-4">
+<span class="material-symbols-outlined text-primary text-2xl">hiking</span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Mission Peak Sunrise Hike</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Sun, Nov 5 · 6:00 AM</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- My Joined Clubs Section -->
+<div class="px-4 py-4">
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">My Joined Clubs</h2>
+<button class="text-primary dark:text-sky-400 text-sm font-medium">View All</button>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-2 flex flex-col gap-1">
+<a class="flex items-center p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50" href="#">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-500/20 mr-4">
+<span class="material-symbols-outlined text-emerald-500 text-2xl">sports_soccer</span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Bay Area Soccer Crew</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">124 Members</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">chevron_right</span>
+</a>
+<a class="flex items-center p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50" href="#">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-500/20 mr-4">
+<span class="material-symbols-outlined text-orange-500 text-2xl">sports_basketball</span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-100">SF Hoops Collective</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">88 Members</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">chevron_right</span>
+</a>
+<a class="flex items-center p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50" href="#">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-500/20 mr-4">
+<span class="material-symbols-outlined text-indigo-500 text-2xl">sports_tennis</span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Peninsula Tennis Group</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">56 Members</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="h-24"></div> <!-- Spacer for bottom nav -->
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 h-24 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700/50 flex justify-around items-center pt-2">
+<div class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-xs font-medium">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-xs font-medium">Clubs</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-xs font-medium">Organize</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-primary dark:text-sky-400">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-xs font-bold">Profile</span>
+</div>
+</div>
+</div>
+</body></html>

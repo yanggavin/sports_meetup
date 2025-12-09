@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events Home Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2f85ee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2431",
+              "text-primary-light": "#101822",
+              "text-primary-dark": "#f6f7f8",
+              "text-secondary-light": "#6c757d",
+              "text-secondary-dark": "#98a2b3",
+              "border-light": "#e5e7eb",
+              "border-dark": "#344054",
+              "success": "#28a745",
+              "warning": "#ffc107",
+              "danger": "#dc3545",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex flex-col bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center text-text-primary-light dark:text-text-primary-dark pr-12">Events</h2>
+</div>
+<!-- Sport Filter Chips -->
+<div class="flex gap-2 px-4 py-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary px-4 text-white">
+<span class="material-symbols-outlined text-lg">sports</span>
+<p class="text-sm font-medium leading-normal">All</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 text-text-primary-light dark:text-text-primary-dark border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-lg">sports_basketball</span>
+<p class="text-sm font-medium leading-normal">Basketball</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 text-text-primary-light dark:text-text-primary-dark border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-lg">sports_tennis</span>
+<p class="text-sm font-medium leading-normal">Tennis</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 text-text-primary-light dark:text-text-primary-dark border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-lg">directions_run</span>
+<p class="text-sm font-medium leading-normal">Running</p>
+</div>
+<div class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 text-text-primary-light dark:text-text-primary-dark border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-lg">hiking</span>
+<p class="text-sm font-medium leading-normal">Hiking</p>
+</div>
+</div>
+<!-- Date Filter Chips -->
+<div class="flex gap-2 px-4 py-2 overflow-x-auto whitespace-nowrap scrollbar-hide border-b border-border-light dark:border-border-dark">
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-primary/20 px-4 text-primary">
+<p class="text-sm font-semibold leading-normal">Today</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-card-light dark:bg-card-dark px-4 text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark">
+<p class="text-sm font-medium leading-normal">Tomorrow</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-card-light dark:bg-card-dark px-4 text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark">
+<p class="text-sm font-medium leading-normal">This Weekend</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-card-light dark:bg-card-dark px-4 text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark">
+<p class="text-sm font-medium leading-normal">Select Date</p>
+</div>
+</div>
+</div>
+<!-- Events List -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Event Card 1 -->
+<div class="flex flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">sports_basketball</span>
+</div>
+<div class="flex-1">
+<h3 class="text-base font-semibold leading-tight text-text-primary-light dark:text-text-primary-dark">Weekly 5v5 Basketball Pickup</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Downtown Hoopers</p>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-white text-sm font-medium">
+<span class="truncate">Join</span>
+</button>
+</div>
+<div class="grid grid-cols-[auto,1fr] items-center gap-x-3 gap-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<p>Sat, Oct 26 • 7:00 PM</p>
+<span class="material-symbols-outlined text-lg">location_on</span>
+<p>City Park Courts</p>
+<span class="material-symbols-outlined text-lg">group</span>
+<p>8/12 Joined • <span class="font-medium text-success">Open</span></p>
+<span class="material-symbols-outlined text-lg">person</span>
+<p>Organized by John D.</p>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="flex flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">sports_tennis</span>
+</div>
+<div class="flex-1">
+<h3 class="text-base font-semibold leading-tight text-text-primary-light dark:text-text-primary-dark">Morning Tennis Match</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Weekend Warriors Club</p>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-success/20 text-success text-sm font-medium">
+<span class="truncate">Joined</span>
+</button>
+</div>
+<div class="grid grid-cols-[auto,1fr] items-center gap-x-3 gap-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<p>Sun, Oct 27 • 9:00 AM</p>
+<span class="material-symbols-outlined text-lg">location_on</span>
+<p>Sunset Rec Center</p>
+<span class="material-symbols-outlined text-lg">group</span>
+<p>4/4 Joined • <span class="font-medium text-warning">Full</span></p>
+<span class="material-symbols-outlined text-lg">person</span>
+<p>Organized by Sarah K.</p>
+</div>
+</div>
+<!-- Event Card 3 - Canceled -->
+<div class="flex flex-col gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm border border-border-light dark:border-border-dark opacity-60">
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">directions_run</span>
+</div>
+<div class="flex-1">
+<h3 class="text-base font-semibold leading-tight text-text-primary-light dark:text-text-primary-dark">City Trail Run</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Urban Runners</p>
+</div>
+<button class="flex min-w-[84px] cursor-not-allowed items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-card-light dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-light dark:border-border-dark text-sm font-medium">
+<span class="truncate">View</span>
+</button>
+</div>
+<div class="grid grid-cols-[auto,1fr] items-center gap-x-3 gap-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<p>Sun, Oct 27 • 6:00 PM</p>
+<span class="material-symbols-outlined text-lg">location_on</span>
+<p>Greenway Entrance</p>
+<span class="material-symbols-outlined text-lg">group</span>
+<p>15/20 Joined • <span class="font-medium text-danger">Canceled</span></p>
+<span class="material-symbols-outlined text-lg">person</span>
+<p>Organized by Mike P.</p>
+</div>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center gap-4 rounded-lg bg-card-light dark:bg-card-dark py-16 px-4 text-center border-2 border-dashed border-border-light dark:border-border-dark">
+<div class="flex size-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-4xl">event_busy</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark">No Events Found</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Try adjusting your filters or check back later.</p>
+</div>
+</div>
+<!-- Infinite Scroll Loader -->
+<div class="flex items-center justify-center py-8">
+<div class="h-8 w-8 animate-spin rounded-full border-4 border-primary/20 border-t-primary"></div>
+</div>
+</div>
+</div>
+</body></html>

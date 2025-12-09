@@ -1,0 +1,111 @@
+<view class="page">
+  <!-- Top App Bar -->
+  <view class="top-bar">
+    <view class="back-btn" bindtap="onBack">
+      <text class="back-icon">←</text>
+    </view>
+    <text class="h4 font-bold text-dark">Event Details</text>
+    <view class="more-btn">
+      <text class="more-icon">⋯</text>
+    </view>
+  </view>
+
+  <!-- Header Image -->
+  <view class="header-image" style="background-image: url('{{event.image}}')"></view>
+
+  <!-- Event Title -->
+  <view class="event-title-section">
+    <view class="row items-center gap-16">
+      <view class="sport-icon-large">
+        <text class="sport-icon-text-large">{{event.sportIcon}}</text>
+      </view>
+      <text class="event-title-text">{{event.title}}</text>
+    </view>
+  </view>
+
+  <!-- Organizer Card -->
+  <view class="organizer-card">
+    <view class="row items-center gap-16 flex-1">
+      <image class="organizer-avatar" src="{{event.organizerAvatar}}" mode="aspectFill"></image>
+      <view class="flex-1">
+        <text class="organizer-label">Organizer</text>
+        <text class="organizer-name">{{event.organizer}}</text>
+      </view>
+    </view>
+    <button class="btn-message" bindtap="onMessageOrganizer">
+      <text class="message-icon">💬</text>
+      <text>Message</text>
+    </button>
+  </view>
+
+  <!-- Event Info -->
+  <view class="info-section">
+    <view class="info-card">
+      <view class="info-icon-container">
+        <text class="info-icon">📅</text>
+      </view>
+      <text class="info-text">{{event.dateTime}}</text>
+    </view>
+
+    <view class="info-card">
+      <view class="info-icon-container">
+        <text class="info-icon">📍</text>
+      </view>
+      <view class="flex-1">
+        <text class="info-text">{{event.location}}</text>
+        <text class="info-subtext">{{event.address}}</text>
+      </view>
+      <text class="map-link" bindtap="onOpenMap">Map</text>
+    </view>
+  </view>
+
+  <!-- Participants -->
+  <view class="participants-section">
+    <view class="row items-center justify-between mb-16">
+      <text class="section-title">Participants ({{event.participants}}/{{event.maxParticipants}})</text>
+      <text class="view-all-link" bindtap="onViewAllParticipants">View All</text>
+    </view>
+    <view class="participants-avatars row items-center gap-16">
+      <view class="avatar-stack">
+        <image wx:for="{{event.participantAvatars}}" wx:key="index" class="participant-avatar" src="{{item}}" mode="aspectFill" style="margin-left: {{index > 0 ? '-24rpx' : '0'}}; z-index: {{100 - index}}"></image>
+        <view class="participant-more" style="margin-left: -24rpx">+{{event.participants - event.participantAvatars.length}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Description -->
+  <view class="description-section">
+    <text class="section-title mb-16">Details</text>
+    <text class="description-text">{{event.description}}</text>
+  </view>
+
+  <!-- Organizer Tools (Only for event owner) -->
+  <view wx:if="{{event.isOrganizer}}" class="organizer-tools">
+    <text class="section-title mb-16">Organizer Tools</text>
+    <view class="tools-grid">
+      <button class="tool-btn" bindtap="onEditEvent">
+        <text class="tool-icon">✏️</text>
+        <text>Edit Event</text>
+      </button>
+      <button class="tool-btn tool-btn-danger" bindtap="onCancelEvent">
+        <text class="tool-icon">❌</text>
+        <text>Cancel Event</text>
+      </button>
+      <button class="tool-btn tool-btn-full" bindtap="onBroadcast">
+        <text class="tool-icon">📢</text>
+        <text>Broadcast Notification</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- Bottom Spacer -->
+  <view style="height: 200rpx"></view>
+
+  <!-- Sticky Action Bar -->
+  <view class="action-bar">
+    <button class="btn-action-primary" bindtap="onJoin">{{event.joined ? 'Leave Event' : 'Join Event'}}</button>
+    <button class="btn-action-share" bindtap="onShare">
+      <text class="share-icon">↗</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<view class="page">
+  <!-- Top App Bar -->
+  <view class="top-bar">
+    <view class="spacer"></view>
+    <text class="h3 font-bold text-dark">Clubs</text>
+    <view class="add-btn">
+      <text class="add-icon">+</text>
+    </view>
+  </view>
+
+  <!-- Search Bar -->
+  <view class="search-container">
+    <view class="search-bar">
+      <text class="search-icon">🔍</text>
+      <input class="search-input" placeholder="Search clubs by name, sport..." />
+    </view>
+  </view>
+
+  <!-- Filter Chips -->
+  <scroll-view scroll-x="true" class="filter-container">
+    <view class="filter-chips">
+      <view class="chip-filter">
+        <text>Sport</text>
+        <text class="filter-arrow">▼</text>
+      </view>
+      <view class="chip-filter">
+        <text>Location</text>
+        <text class="filter-arrow">▼</text>
+      </view>
+      <view class="chip-filter">
+        <text>Club Size</text>
+        <text class="filter-arrow">▼</text>
+      </view>
+      <view class="chip-filter">
+        <text class="filter-icon">⚙</text>
+        <text>All Filters</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Clubs List -->
+  <view class="clubs-list">
+    <block wx:for="{{clubs}}" wx:key="id">
+      <view class="club-card" bindtap="onClubTap" data-id="{{item.id}}">
+        <view class="club-header">
+          <image class="club-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+          <view class="club-info flex-1">
+            <text class="club-name">{{item.name}}</text>
+            <text class="club-description">{{item.description}}</text>
+          </view>
+        </view>
+        <view class="club-meta">
+          <view class="meta-item">
+            <text class="meta-icon">📍</text>
+            <text class="meta-text">{{item.location}}</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-icon">👥</text>
+            <text class="meta-text">{{item.members}} Members</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-icon">📅</text>
+            <text class="meta-text">{{item.events}} Events</text>
+          </view>
+          <button class="btn-club-action {{item.joined ? 'btn-club-joined' : 'btn-club-join'}}" catchtap="onJoinClub" data-id="{{item.id}}">
+            <text>{{item.joined ? 'Joined' : 'Join Club'}}</text>
+          </button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- Bottom Spacer -->
+  <view style="height: 160rpx"></view>
+</view>

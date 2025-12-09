@@ -1,0 +1,8 @@
+.page { padding-bottom: 120rpx; }
+.chat { display: flex; flex-direction: column; gap: 16rpx; margin-bottom: 24rpx; }
+.bubble { max-width: 70%; padding: 16rpx; border-radius: 16rpx; }
+.bubble.left { align-self: flex-start; background-color: #FFFFFF; border: 1rpx solid #E5E5E5; }
+.bubble.right { align-self: flex-end; background: linear-gradient(180deg, #2F80ED 0%, #1366D6 100%); color: #FFFFFF; }
+.timestamp { display: block; margin-top: 8rpx; color: #A9A9A9; }
+.composer { position: fixed; left: 0; right: 0; bottom: 120rpx; padding: 16rpx; background-color: #F7F7F7; }
+.composer-input { flex: 1; background-color: #FFFFFF; border: 1rpx solid #E5E5E5; border-radius: 12rpx; padding: 16rpx; }

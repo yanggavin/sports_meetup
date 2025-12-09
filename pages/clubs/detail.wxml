@@ -1,0 +1,11 @@
+<view class="page p-24">
+  <view class="card mb-24">
+    <text class="h2 text-dark">俱乐部名称</text>
+    <text class="caption text-secondary">这里是俱乐部简介和信息</text>
+  </view>
+  <view class="row gap-16">
+    <button class="btn btn-secondary">加入俱乐部</button>
+    <button class="btn btn-tertiary">联系管理员</button>
+  </view>
+  <view style="height: 120rpx"></view>
+</view>

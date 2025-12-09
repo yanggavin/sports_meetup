@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clubs List Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2f85ee",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101822",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex flex-col bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center"></div>
+<h1 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Clubs</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-slate-900 dark:text-slate-50 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-slate-500 dark:text-slate-400 flex border-none bg-slate-200 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-0 border-none bg-slate-200 dark:bg-slate-800 focus:border-none h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search clubs by name, sport..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-4 pb-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-3 pr-2">
+<p class="text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal">Sport</p>
+<span class="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-3 pr-2">
+<p class="text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal">Location</p>
+<span class="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-3 pr-2">
+<p class="text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal">Club Size</p>
+<span class="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-3 pr-2">
+<p class="text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal">All Filters</p>
+<span class="material-symbols-outlined text-xl text-slate-500 dark:text-slate-400">tune</span>
+</button>
+</div>
+</div>
+<!-- Club List -->
+<div class="flex flex-col gap-3 p-4 pt-2">
+<!-- List Item 1 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-[60px] w-[60px] shrink-0" data-alt="Sunrise Runners Club logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5bhtKPXUaDj5heykrqiq3v7yhzjBmXkE0sGGf3V3-wDHpTnNBR4XDgb8aqTaQRR25qxYZUf5QlFueIBlZ6RIxJLKNgn3XqU11eoC8RUufQ_R63cUA8H-M2TRmsEr9J3wWWcdCn0fnybUvOnXUSIUpze565WfZkntN34XC8ZdgK6FgZuOAZfe3_J9xRo8n8nHOs-YsfLgzMDsNS9_J-SJrR_F3AqIECu289y7mFXngp0DgftiPUK1tpXifcd5voXiaURwri3zYKCo");'></div>
+<div class="flex flex-1 flex-col justify-center gap-1">
+<p class="text-slate-900 dark:text-slate-50 text-base font-bold leading-tight">Sunrise Runners Club</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Morning runs for all skill levels.</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Central Park, NYC</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>85 Members</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+<span>2 Events</span>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-primary text-white text-sm font-medium leading-normal w-fit shadow-sm">
+<span class="truncate">Join Club</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-[60px] w-[60px] shrink-0" data-alt="Downtown Tennis Crew logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAP96-yuh9kP0wiShcUtaSKR4E6manOiEGzAk7ZGsKpWGpijHKlhzFfqwVCl8UYJmMjkfuvlDU-1EtzU4yvrGGg3W_cyTkDeiLOXbTh_tydbhdum8WSWVHhYZNfKm2Ay4Q6RWv53v5Ssr1GUBqWqbzMQwsLEZ0IRNPJAstjwMmWB-2_pTEMRVG678DSF1kGAExSTnVrmYX0JStCI6WpByRM2zx8o4z_OMU-QU5xyFvibtNe-IR7LsZZFY94pSSRS5Xzivp-05JmLvY");'></div>
+<div class="flex flex-1 flex-col justify-center gap-1">
+<p class="text-slate-900 dark:text-slate-50 text-base font-bold leading-tight">Downtown Tennis Crew</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Friendly matches and league play.</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>City Courts, SF</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>120 Members</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+<span>3 Events</span>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal w-fit">
+<span class="truncate">Joined</span>
+</button>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-[60px] w-[60px] shrink-0" data-alt="Hoops Collective logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxyYNxUe-36RwW7W4G-weLLeXIn5z3SW6FpzCvriMosBka4DhiXMqBktn90M1Dcy2Tnm9DHsf8F9Rf_Byv18HFmM-nSpuppsu7K5stu_GtGseDJge699wGb63xnm6hDl_dJRshlAlEQDFJcyVp9cv61j4bu9JHXl8yTYwPZVrsv_-W6EdOcsr4CkiiGFZDv4en6Q_Heo2gdTCUxprBKkATLB3D61NyeuAEdxx_2Ct6F-UBLOAhtHCamNTRiRw3oVFUdZ3jXUqaBfY");'></div>
+<div class="flex flex-1 flex-col justify-center gap-1">
+<p class="text-slate-900 dark:text-slate-50 text-base font-bold leading-tight">Hoops Collective</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Pickup basketball games for all.</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Brooklyn Bridge Park</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>45 Members</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+<span>5 Events</span>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-primary text-white text-sm font-medium leading-normal w-fit shadow-sm">
+<span class="truncate">Join Club</span>
+</button>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-[60px] w-[60px] shrink-0" data-alt="City Cyclists logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIyhvpZCnwEXFkLChD1Z1qbRhLGvTe-sw3Mq7JeihSnEexLdsPbrSZe6C7wu5kD5JEy_uuuZZE7_Nv6Gs-HdZwJe5NeRQ1GICFBXE8cdzOWDQSJ9YGnplcGA28rd5cx9jDqXVgLky_s2svHAMjOhxqKvHRy3-OUIADMNCu1mYTdWJPGmyJkhk1wgqipMDXoWtRdwIZ9KD9Pyezs9rb7CFy2gDEARqHKiZ-a5l7jzsb8WpkALx_o35eRgpmZ0amddWxQ18bWyX6-1E");'></div>
+<div class="flex flex-1 flex-col justify-center gap-1">
+<p class="text-slate-900 dark:text-slate-50 text-base font-bold leading-tight">City Cyclists</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Weekend rides and coffee stops.</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Golden Gate Bridge</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>210 Members</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+<span>1 Event</span>
+</div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50 text-sm font-medium leading-normal w-fit">
+<span class="truncate">Joined</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,84 @@
+<view class="page">
+  <!-- Top App Bar -->
+  <view class="top-bar">
+    <view class="search-icon"></view>
+    <text class="h3 font-bold text-dark">Events</text>
+    <view class="spacer"></view>
+  </view>
+
+  <!-- Sport Filter Chips -->
+  <scroll-view scroll-x="true" class="filter-container">
+    <view class="filter-chips">
+      <block wx:for="{{sportFilters}}" wx:key="name">
+        <view class="chip {{item.selected ? 'chip-primary' : 'chip-outline'}}" bindtap="onSportSelect" data-index="{{index}}">
+          <text class="sport-emoji">{{item.icon}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- Date Filter Chips -->
+  <scroll-view scroll-x="true" class="filter-container border-bottom">
+    <view class="filter-chips">
+      <block wx:for="{{dateFilters}}" wx:key="name">
+        <view class="chip-date {{item.selected ? 'chip-date-active' : 'chip-date-outline'}}" bindtap="onDateSelect" data-index="{{index}}">
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- Events List -->
+  <view class="events-list">
+    <block wx:for="{{events}}" wx:key="id">
+      <view class="event-card" bindtap="onViewDetail" data-id="{{item.id}}">
+        <view class="event-header">
+          <view class="row items-center gap-16 flex-1">
+            <view class="sport-icon-container">
+              <text class="sport-icon-text">{{item.sportIcon}}</text>
+            </view>
+            <view class="flex-1">
+              <text class="event-title">{{item.title}}</text>
+              <text class="event-club">{{item.clubName}}</text>
+            </view>
+          </view>
+          <button class="btn {{item.joined ? 'btn-joined' : 'btn-join'}}" catchtap="onJoinTap" data-id="{{item.id}}">
+            <text>{{item.joined ? 'Joined' : 'Join'}}</text>
+          </button>
+        </view>
+        <view class="event-details">
+          <view class="detail-row">
+            <text class="detail-icon">📅</text>
+            <text>{{item.dateTime}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-icon">📍</text>
+            <text>{{item.location}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-icon">👥</text>
+            <text>{{item.participants}}/{{item.maxParticipants}} Joined • </text>
+            <text class="{{item.status}}">{{item.statusText}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-icon">👤</text>
+            <text>Organized by {{item.organizer}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- Empty State -->
+    <view wx:if="{{events.length === 0}}" class="empty-state">
+      <view class="empty-icon-container">
+        <text class="empty-icon">📅</text>
+      </view>
+      <text class="empty-title">No Events Found</text>
+      <text class="empty-subtitle">Try adjusting your filters or check back later.</text>
+    </view>
+  </view>
+
+  <!-- Custom Tab Bar space -->
+  <view style="height: 160rpx"></view>
+</view>

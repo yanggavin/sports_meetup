@@ -1,0 +1,190 @@
+/* Global Branding Styles for Sport Meetup */
+
+/* Design System Colors - Based on UI Mockups */
+:root {
+  --primary: #2f85ee;
+  --background-light: #f6f7f8;
+  --background-dark: #101822;
+  --card-light: #ffffff;
+  --card-dark: #1a2431;
+  --text-primary-light: #101822;
+  --text-primary-dark: #f6f7f8;
+  --text-secondary-light: #6c757d;
+  --text-secondary-dark: #98a2b3;
+  --border-light: #e5e7eb;
+  --border-dark: #344054;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* Colors */
+.text-primary { color: #2f85ee; }
+.bg-primary { background-color: #2f85ee; }
+.text-dark { color: #101822; }
+.text-secondary { color: #6c757d; }
+.bg-light { background-color: #f6f7f8; }
+.bg-white { background-color: #ffffff; }
+.bg-card { background-color: #ffffff; }
+.text-success { color: #28a745; }
+.text-warning { color: #ffc107; }
+.text-danger { color: #dc3545; }
+.border-color { border-color: #e5e7eb; }
+
+/* Typography */
+.h1 { font-size: 48rpx; font-weight: 700; line-height: 1.2; }
+.h2 { font-size: 36rpx; font-weight: 700; line-height: 1.3; }
+.h3 { font-size: 32rpx; font-weight: 600; line-height: 1.3; }
+.h4 { font-size: 28rpx; font-weight: 600; line-height: 1.4; }
+.body { font-size: 28rpx; font-weight: 400; line-height: 1.5; }
+.body-sm { font-size: 24rpx; font-weight: 400; line-height: 1.5; }
+.caption { font-size: 22rpx; font-weight: 400; line-height: 1.4; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+
+/* Components - Buttons */
+.btn {
+  height: 80rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  border: none;
+  transition: opacity 0.2s;
+}
+.btn-primary {
+  background-color: #2f85ee;
+  color: #ffffff;
+}
+.btn-success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+.btn-outline {
+  background-color: #ffffff;
+  border: 2rpx solid #e5e7eb;
+  color: #101822;
+}
+.btn-sm {
+  height: 64rpx;
+  font-size: 24rpx;
+  padding: 0 32rpx;
+}
+.btn-lg {
+  height: 96rpx;
+  font-size: 32rpx;
+}
+
+/* Card Component */
+.card {
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.04);
+  padding: 32rpx;
+  border: 1rpx solid #e5e7eb;
+}
+
+/* Chip/Tag Component */
+.chip {
+  height: 64rpx;
+  padding: 0 32rpx;
+  border-radius: 999rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.chip-primary {
+  background-color: #2f85ee;
+  color: #ffffff;
+}
+.chip-primary-light {
+  background-color: rgba(47, 133, 238, 0.2);
+  color: #2f85ee;
+}
+.chip-outline {
+  background-color: #ffffff;
+  border: 2rpx solid #e5e7eb;
+  color: #101822;
+}
+
+/* Layout Utilities */
+.row { display: flex; flex-direction: row; }
+.col { display: flex; flex-direction: column; }
+.center { align-items: center; justify-content: center; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.space-between { justify-content: space-between; }
+.wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1; }
+
+/* Spacing */
+.p-8 { padding: 8rpx; }
+.p-12 { padding: 12rpx; }
+.p-16 { padding: 16rpx; }
+.p-24 { padding: 24rpx; }
+.p-32 { padding: 32rpx; }
+.px-16 { padding-left: 16rpx; padding-right: 16rpx; }
+.px-24 { padding-left: 24rpx; padding-right: 24rpx; }
+.px-32 { padding-left: 32rpx; padding-right: 32rpx; }
+.py-8 { padding-top: 8rpx; padding-bottom: 8rpx; }
+.py-12 { padding-top: 12rpx; padding-bottom: 12rpx; }
+.py-16 { padding-top: 16rpx; padding-bottom: 16rpx; }
+.py-24 { padding-top: 24rpx; padding-bottom: 24rpx; }
+.m-8 { margin: 8rpx; }
+.m-16 { margin: 16rpx; }
+.m-24 { margin: 24rpx; }
+.mb-8 { margin-bottom: 8rpx; }
+.mb-12 { margin-bottom: 12rpx; }
+.mb-16 { margin-bottom: 16rpx; }
+.mb-24 { margin-bottom: 24rpx; }
+.mb-32 { margin-bottom: 32rpx; }
+.mt-8 { margin-top: 8rpx; }
+.mt-12 { margin-top: 12rpx; }
+.mt-16 { margin-top: 16rpx; }
+.mt-24 { margin-top: 24rpx; }
+.gap-8 { gap: 8rpx; }
+.gap-12 { gap: 12rpx; }
+.gap-16 { gap: 16rpx; }
+.gap-24 { gap: 24rpx; }
+.gap-32 { gap: 32rpx; }
+
+/* Border & Divider */
+.divider { height: 1rpx; background-color: #e5e7eb; }
+.border { border: 1rpx solid #e5e7eb; }
+.border-top { border-top: 1rpx solid #e5e7eb; }
+.border-bottom { border-bottom: 1rpx solid #e5e7eb; }
+.rounded { border-radius: 16rpx; }
+.rounded-lg { border-radius: 24rpx; }
+.rounded-full { border-radius: 999rpx; }
+
+/* Shadow */
+.shadow-sm { box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04); }
+.shadow { box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.06); }
+.shadow-lg { box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08); }
+
+/* Icon */
+.icon-sm { width: 32rpx; height: 32rpx; }
+.icon-md { width: 48rpx; height: 48rpx; }
+.icon-lg { width: 64rpx; height: 64rpx; }
+
+/* Avatar */
+.avatar { border-radius: 999rpx; }
+.avatar-sm { width: 64rpx; height: 64rpx; }
+.avatar-md { width: 96rpx; height: 96rpx; }
+.avatar-lg { width: 128rpx; height: 128rpx; }
+
+/* Page background */
+page {
+  background-color: #f6f7f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}

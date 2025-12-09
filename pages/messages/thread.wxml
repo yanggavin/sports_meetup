@@ -1,0 +1,15 @@
+<view class="page p-24">
+  <view class="chat">
+    <block wx:for="{{messages}}" wx:key="id">
+      <view class="bubble {{item.sender==='me'?'right':'left'}}">
+        <text class="body">{{item.content}}</text>
+        <text class="caption timestamp">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="composer row gap-16">
+    <input class="composer-input" placeholder="输入消息..." bindinput="onInput" value="{{draft}}" />
+    <button class="btn btn-secondary" bindtap="onSend">发送</button>
+  </view>
+  <view style="height: 120rpx"></view>
+</view>

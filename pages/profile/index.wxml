@@ -1,0 +1,57 @@
+<view class="page p-24">
+  <view class="card mb-24 row gap-24 center">
+    <image class="avatar" src="https://dummyimage.com/120x120/2f80ed/ffffff&text=SM" mode="cover" />
+    <view class="col">
+      <text class="h2 text-dark">{{user.name}}</text>
+      <text class="caption text-secondary">{{user.bio}}</text>
+    </view>
+  </view>
+
+  <view class="card mb-24 row space-between">
+    <view class="col center">
+      <text class="h3 text-dark">{{stats.joined}}</text>
+      <text class="caption text-secondary">参加活动</text>
+    </view>
+    <view class="col center">
+      <text class="h3 text-dark">{{stats.clubs}}</text>
+      <text class="caption text-secondary">俱乐部</text>
+    </view>
+    <view class="col center">
+      <text class="h3 text-dark">{{stats.friends}}</text>
+      <text class="caption text-secondary">好友</text>
+    </view>
+  </view>
+
+  <view class="card mb-24">
+    <text class="h3 text-dark mb-16">偏好运动</text>
+    <view class="row gap-16 wrap">
+      <block wx:for="{{favoriteSports}}" wx:key="name">
+        <view class="chip chip-primary">
+          <text>{{item.name}} · {{item.count}}次</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="card mb-24">
+    <text class="h3 text-dark mb-16">我组织的活动</text>
+    <block wx:for="{{organizedEvents}}" wx:key="id">
+      <view class="row space-between mb-16">
+        <text class="body text-dark">{{item.title}}</text>
+        <text class="caption text-secondary">{{item.date}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="card mb-24">
+    <text class="h3 text-dark mb-16">我的俱乐部</text>
+    <block wx:for="{{clubs}}" wx:key="id">
+      <view class="row space-between mb-16">
+        <text class="body text-dark">{{item.name}}</text>
+        <text class="caption text-secondary">{{item.location}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view style="height: 120rpx"></view>
+</view>

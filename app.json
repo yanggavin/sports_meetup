@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/events/index",
+    "pages/events/detail",
+    "pages/clubs/index",
+    "pages/clubs/detail",
+    "pages/create/index",
+    "pages/messages/index",
+    "pages/messages/thread",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "Sport Meetup",
+    "navigationBarBackgroundColor": "#f6f7f8",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f6f7f8",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#6c757d",
+    "selectedColor": "#2f85ee",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/events/index", "text": "Events" },
+      { "pagePath": "pages/clubs/index", "text": "Clubs" },
+      { "pagePath": "pages/create/index", "text": "Create" },
+      { "pagePath": "pages/messages/index", "text": "Messages" },
+      { "pagePath": "pages/profile/index", "text": "Profile" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

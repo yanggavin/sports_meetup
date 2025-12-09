@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Creation Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2f85ee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.form-select {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBtA-KQsZlYehma2m_mJLvEsYBAs2oF8zVo5haWhApemUYNmkYb-grGLzi_V4qVd7-B_YYR1vwyuHsLtR2Iq5gJRv4dWd0JVuiY9Ql_uK6GNQPpN7UF2P4HhwnTQ2AxYylPsDoEOAhtBvG0jm_0NpARz4kH_KtI5xxGS8k5AVbPDXGMVxhebNREVGRHScJIl9_zVYVnO_qIXpxe6ZsARpm979tDkUAr3r5Oy3yHLE5IWi7oIcKgIL0uL38mW3As9xYECfVawQOfPtg);
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="text-[#0d141b] dark:text-slate-200 flex size-12 shrink-0 items-center justify-start -ml-2">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-[#0d141b] dark:text-slate-50 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Create Event</h2>
+<div class="flex size-12 shrink-0 items-center"></div> <!-- Spacer for centering title -->
+</div>
+<main class="flex-grow pb-32">
+<!-- Event Details Section -->
+<h2 class="text-[#0d141b] dark:text-slate-50 tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-1 pt-5">Event Details</h2>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Activity Name <span class="text-red-500">*</span></p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal" placeholder="e.g., Morning Basketball Game" value=""/>
+</label>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Activity Type <span class="text-red-500">*</span></p>
+<select class="form-select appearance-none w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal">
+<option disabled="" selected="" value="">Select activity type</option>
+<option value="basketball">Basketball</option>
+<option value="running">Running</option>
+<option value="tennis">Tennis</option>
+<option value="soccer">Soccer</option>
+</select>
+</label>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Affiliated Club (Optional)</p>
+<select class="form-select appearance-none w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal">
+<option disabled="" selected="" value="">e.g., Downtown Runners Club</option>
+<option value="club1">Downtown Runners Club</option>
+<option value="club2">City Hoopers</option>
+</select>
+</label>
+</div>
+<!-- Logistics Section -->
+<h2 class="text-[#0d141b] dark:text-slate-50 tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-1 pt-5">Logistics</h2>
+<div class="flex w-full flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-0 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Date <span class="text-red-500">*</span></p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal" type="date" value="2024-08-15"/>
+</label>
+<label class="flex flex-col min-w-0 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Time <span class="text-red-500">*</span></p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal" type="time" value="09:00"/>
+</label>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Location <span class="text-red-500">*</span></p>
+<div class="relative w-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 pl-12 pr-4 py-2 text-base font-normal leading-normal" placeholder="Enter address or landmark" value=""/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">location_on</span>
+</div>
+</label>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Max Participants <span class="text-red-500">*</span></p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal" placeholder="e.g., 10" type="number" value=""/>
+</label>
+</div>
+<!-- Description Section -->
+<h2 class="text-[#0d141b] dark:text-slate-50 tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-1 pt-5">Description</h2>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d141b] dark:text-slate-300 text-base font-medium leading-normal pb-2">Activity Description (Optional)</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-xl text-[#0d141b] dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdae7] dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary min-h-[120px] placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal" placeholder="Add details like skill level, what to bring, rules, etc."></textarea>
+</label>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800">
+<button class="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-primary text-white h-14 text-lg font-bold leading-normal tracking-tight shadow-md hover:opacity-90 transition-opacity">Publish Event</button>
+</div>
+</div>
+</body></html>

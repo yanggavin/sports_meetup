@@ -1,0 +1,2 @@
+.page { padding-bottom: 120rpx; }
+.avatar { width: 120rpx; height: 120rpx; border-radius: 60rpx; }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Detail Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2f85ee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10">
+<span class="material-symbols-outlined text-zinc-900 dark:text-white text-2xl">arrow_back</span>
+</div>
+<h2 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center truncate px-2">Event Details</h2>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10">
+<span class="material-symbols-outlined text-zinc-900 dark:text-white text-2xl">more_horiz</span>
+</div>
+</div>
+<div class="flex-grow pb-32">
+<!-- Header Image -->
+<div class="px-4 py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[218px]" data-alt="Basketball players in action on an outdoor court." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5N7h_hKqYDRcsLEcAIW60khHYR5VGumLDt87tPsbXlR_12lGMNmbJssneMyPbWssQMVJKi31y8vCSCSpDW03sH03yrz6F-yzCssnHahjSyyaCnEggwjE6QVFjfusLaLbrg0Hw13YNGssiSyFDLr6pa-IQE83gSpk0eumCJ6Q6FqOl1OFTKMqiLnBcuznjrhqnItMaJRMIwgmH2HSuTUA-QiWukqgCo68ZA-jOqyNVMwHaB768hsSvAspoLB1pkiDud90o-tpXem4");'></div>
+</div>
+<!-- Headline Text -->
+<div class="px-4 pt-3 pb-3">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined text-primary text-3xl">sports_basketball</span>
+</div>
+<h1 class="text-zinc-900 dark:text-white tracking-tight text-3xl font-bold leading-tight flex-1">Weekly 5v5 Basketball Pickup</h1>
+</div>
+</div>
+<!-- Organizer Card -->
+<div class="px-4 pb-3">
+<div class="flex items-center gap-4 bg-white dark:bg-white/10 p-4 rounded-xl">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Portrait of Alex Morgan, the event organizer." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1UMLV5ZVFQtf29O6nvyiVD5aebRjmB_uUQ8MuFtLC_7YxrAvjs-dYSSXXz9QIfvxvLebu0Zjq9VK9sGWIAAA1bPAFThtClpmpksWFE0eFCxBYQO9a-guAQYtiOdyayxONzmkQGmvblKpWVDY9NYwe1tGuq11F6ZaObJzN7AiUCvMavBmtA6cPCzFIfI2vg84SBHnhQHpzyxzB3l_dfSm5amsi7IeSo44OqD9Wqg7Smdm4Es0dHl4GRUxKA4jxuKt2gt-Rf6sZU2w");'></div>
+<div class="flex-1">
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-normal">Organizer</p>
+<p class="text-zinc-900 dark:text-white text-base font-medium leading-normal truncate">Alex Morgan</p>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal gap-2">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="truncate">Message</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Info Section -->
+<div class="px-4 space-y-3 pb-3">
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-white/10 rounded-xl">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+</div>
+<p class="text-zinc-900 dark:text-white text-base font-medium leading-normal flex-1">Wed, Dec 18, 7:00 PM - 9:00 PM</p>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-white/10 rounded-xl">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-zinc-900 dark:text-white text-base font-medium leading-normal">City Sports Complex - Court 3</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm">123 Sports Avenue, Metropark</p>
+</div>
+<button class="text-primary text-sm font-bold">Map</button>
+</div>
+</div>
+<!-- Participants -->
+<div class="px-4 pb-3">
+<div class="flex items-center justify-between py-2">
+<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Participants (12/20)</h3>
+<button class="text-primary font-bold text-sm">View All</button>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<div class="flex -space-x-3">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Avatar of a participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8JTkoEvYly0osT4F4Wq303Z1BtU20NQ5i3I22ymQhIntMWhlncT9-0dm-nf0by-Zf1ANFJL3ZTvmMSuF3v1146gXuMSibRpPimEo4pDwC-cKe_Oe73WFTJ13fCoRinItNf5osZcra7wAIExaqV5mvVjP9oF4WPoEud8h5V01XWFWVzpvkrfMCFBQovq77BQKMoDWYo9MnSEtChh5py2f2Eo1DnOvT99ec5oftzZ-J5VLleHabN3VnLK2Q8IaeMDruoZ4xm7v7V1E")'></div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Avatar of a participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9INTtQvm5ZQW00h9Y1SRZQ6BNhcQtnhYr-adOG_-ZYcgHgKqt1Y1XjgBRmZqrXZIrZxl3m1HqYjr1ASeCsdG0f-8dPnHt2v-cgw9lpB6LyQ_kfx90j0uCfz2z2g_b8OjpeYdgsRahFhbPGiKnZp82Ok18OSh-eGX1uSvoZ0IogizLPqluUj7pARU5jsIEdY7bveBqzOAnXNzIXranZpyTfxJ6dDxihcUB5zxT1FCBWn2pNPKfyxXR5RGpffjuarkaO5W3gmmpvrY")'></div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Avatar of a participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-BPp-9MhEvw3KYvA_Od5PFC3jvYMBd3NUjQ4vF-KXqYnwaA8p8XRGnqr3BxEJj-Jnuey7rxuQlMDmfU4a3ChcMhWtmSvyz4ipxwVYIA5Zdltp78WCtc2TTTGGOVWIRuV7idbPgnVIdEKBi5iZeq9oe1azk8-4y-uBj_X9UE654Vu6McR7XRhrmdsoaL-SJiWz5sata4eqm9e6Sqv3swkzXnzKeW0FeUNn07gFe89gVrPirbJVEtOVLQGcYhXE0i72ch745985g4c")'></div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Avatar of a participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1RXipwY-E7hUq1I6VTCbkR-IIuFS2p6ytrL3gvmH4h9RIDvBZjiDWW1iox78zUMjBy_lv0Af4VjFcI_8SYoQ32_voy0fRlY12fvIMYIc5IJ-IiqAptW09vPlDcdive0LhlowR5hG5-CEZ_uBxdjvIZlzL3YCLAe4XNBBha7l6Z-t6GH6F3Xn0urteN9dpUEJqx7ZUN0rlPA-hhoCGc5uPFzsy90OPZ2Q6uFbHAgjlvOj-q0__obeI0h86StBUN-gxQvLqn83I61o")'></div>
+<div class="size-10 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm border-2 border-background-light dark:border-background-dark">+8</div>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="px-4 pb-3">
+<h3 class="text-lg font-bold text-zinc-900 dark:text-white py-2">Details</h3>
+<p class="text-zinc-600 dark:text-zinc-300 text-base leading-relaxed">
+                    Join us for a friendly but competitive 5v5 pickup basketball game. All skill levels are welcome! We'll play a series of short games to 11. Please bring a white and a dark shirt to help us form teams easily. See you on the court!
+                </p>
+</div>
+<!-- Organizer Tools -->
+<div class="px-4 pb-3">
+<h3 class="text-lg font-bold text-zinc-900 dark:text-white py-2">Organizer Tools</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-12 px-4 bg-white dark:bg-white/10 text-zinc-900 dark:text-white text-base font-bold">
+<span class="material-symbols-outlined">edit</span>
+<span>Edit Event</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-12 px-4 bg-white dark:bg-white/10 text-red-500 text-base font-bold">
+<span class="material-symbols-outlined">cancel</span>
+<span>Cancel Event</span>
+</button>
+<button class="col-span-2 flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-12 px-4 bg-white dark:bg-white/10 text-zinc-900 dark:text-white text-base font-bold">
+<span class="material-symbols-outlined">campaign</span>
+<span>Broadcast Notification</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sticky Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-zinc-200 dark:border-zinc-800">
+<div class="flex items-center gap-3">
+<button class="flex h-12 flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary text-white text-base font-bold leading-normal tracking-wide">Join Event</button>
+<button class="flex size-12 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
