@@ -2,7 +2,7 @@
   <!-- Top App Bar -->
   <view class="top-bar">
     <view class="spacer"></view>
-    <text class="h3 font-bold text-dark">Clubs</text>
+    <text class="h3 font-bold text-dark">俱乐部</text>
     <view class="add-btn">
       <text class="add-icon">+</text>
     </view>
@@ -12,7 +12,7 @@
   <view class="search-container">
     <view class="search-bar">
       <text class="search-icon">🔍</text>
-      <input class="search-input" placeholder="Search clubs by name, sport..." />
+      <input class="search-input" placeholder="搜索俱乐部名称、运动类型..." />
     </view>
   </view>
 
@@ -20,20 +20,20 @@
   <scroll-view scroll-x="true" class="filter-container">
     <view class="filter-chips">
       <view class="chip-filter">
-        <text>Sport</text>
+        <text>运动类型</text>
         <text class="filter-arrow">▼</text>
       </view>
       <view class="chip-filter">
-        <text>Location</text>
+        <text>城市</text>
         <text class="filter-arrow">▼</text>
       </view>
       <view class="chip-filter">
-        <text>Club Size</text>
+        <text>成员规模</text>
         <text class="filter-arrow">▼</text>
       </view>
       <view class="chip-filter">
         <text class="filter-icon">⚙</text>
-        <text>All Filters</text>
+        <text>全部筛选</text>
       </view>
     </view>
   </scroll-view>
@@ -56,14 +56,14 @@
           </view>
           <view class="meta-item">
             <text class="meta-icon">👥</text>
-            <text class="meta-text">{{item.members}} Members</text>
+            <text class="meta-text">{{item.members}} 名成员</text>
           </view>
           <view class="meta-item">
             <text class="meta-icon">📅</text>
-            <text class="meta-text">{{item.events}} Events</text>
+            <text class="meta-text">{{item.events}} 个即将开始的活动</text>
           </view>
           <button class="btn-club-action {{item.joined ? 'btn-club-joined' : 'btn-club-join'}}" catchtap="onJoinClub" data-id="{{item.id}}">
-            <text>{{item.joined ? 'Joined' : 'Join Club'}}</text>
+            <text>{{item.joined ? '已加入' : '加入俱乐部'}}</text>
           </button>
         </view>
       </view>

@@ -47,13 +47,13 @@
     <view class="meta-card">
       <view class="meta-card-content">
         <text class="meta-card-icon">👥</text>
-        <text class="meta-card-text">{{club.members}} Members</text>
+        <text class="meta-card-text">{{club.members}} 名成员</text>
       </view>
     </view>
     <view class="meta-card">
       <view class="meta-card-content">
         <text class="meta-card-icon">📅</text>
-        <text class="meta-card-text">{{club.upcomingEvents}} Upcoming</text>
+        <text class="meta-card-text">{{club.upcomingEvents}} 个即将开始</text>
       </view>
     </view>
   </view>
@@ -61,7 +61,7 @@
   <!-- About Section (Collapsible) -->
   <view class="about-section">
     <view class="section-header">
-      <text class="section-title">About Our Club</text>
+      <text class="section-title">俱乐部简介</text>
       <text class="expand-icon">▼</text>
     </view>
     <view class="about-content">
@@ -71,7 +71,7 @@
 
   <!-- Upcoming Events -->
   <view class="events-section">
-    <text class="section-title mb-16">Upcoming Events</text>
+    <text class="section-title mb-16">即将开始的活动</text>
     <view class="events-list-club">
       <block wx:for="{{club.events}}" wx:key="id">
         <view class="event-item-club" bindtap="onEventTap" data-id="{{item.id}}">
@@ -94,10 +94,10 @@
   <!-- Sticky Action Bar -->
   <view class="action-bar-club">
     <button class="btn-club-message" bindtap="onMessageAdmin">
-      <text>Message Admin</text>
+      <text>私信管理员</text>
     </button>
     <button class="btn-club-join {{club.joined ? 'joined' : ''}}" bindtap="onJoinClub">
-      <text>{{club.joined ? 'Leave Club' : 'Join Club'}}</text>
+      <text>{{club.joined ? '退出俱乐部' : '加入俱乐部'}}</text>
     </button>
   </view>
 </view>

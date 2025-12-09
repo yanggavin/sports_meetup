@@ -1,52 +1,52 @@
 Page({
   data: {
     user: {
-      avatar: '/assets/user-avatar.png',
-      name: 'Alex Johnson',
-      bio: 'Lover of all things outdoors. San Francisco, CA.',
+      avatar: 'https://dummyimage.com/240x240/f6f7f8/2f85ee&text=ME',
+      name: 'Alex Chen',
+      bio: '运动爱好者 · 上海',
       stats: {
         joinedActivities: 15,
         clubs: 8,
         friends: 27
       },
       favoriteSports: [
-        { name: 'Badminton', icon: '🏸', count: 12 },
-        { name: 'Soccer', icon: '⚽', count: 8 },
-        { name: 'Basketball', icon: '🏀', count: 5 },
-        { name: 'Running', icon: '🏃', count: 3 }
+        { name: '羽毛球', icon: '🏸', count: 12 },
+        { name: '足球', icon: '⚽', count: 8 },
+        { name: '篮球', icon: '🏀', count: 5 },
+        { name: '跑步', icon: '🏃', count: 3 }
       ],
       organizedEvents: [
         {
           id: 'e1',
-          title: 'Golden Gate Park Run',
+          title: '滨江 5K 约跑',
           icon: '🏃',
-          date: 'Sat, Oct 28',
-          time: '9:00 AM'
+          date: '12月12日',
+          time: '19:00'
         },
         {
           id: 'e2',
-          title: 'Mission Peak Sunrise Hike',
+          title: '周日晨光徒步',
           icon: '🥾',
-          date: 'Sun, Nov 5',
-          time: '6:00 AM'
+          date: '12月15日',
+          time: '06:00'
         }
       ],
       joinedClubs: [
         {
           id: 'c1',
-          name: 'Bay Area Soccer Crew',
+          name: '湾区足球团',
           icon: '⚽',
           members: 124
         },
         {
           id: 'c2',
-          name: 'SF Hoops Collective',
+          name: '城市篮球联盟',
           icon: '🏀',
           members: 88
         },
         {
           id: 'c3',
-          name: 'Peninsula Tennis Group',
+          name: '半岛网球群',
           icon: '🎾',
           members: 56
         }

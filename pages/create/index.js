@@ -1,12 +1,12 @@
 Page({
   data: {
-    sports: ['Basketball', 'Tennis', 'Running', 'Hiking', 'Soccer', 'Badminton', 'Cycling', 'Swimming'],
+    sports: ['羽毛球', '跑步', '骑行', '登山', '足球', '篮球', '网球', '游泳'],
     sportIndex: 0,
-    clubs: ['No Club (Personal Event)', 'Downtown Hoopers', 'Weekend Warriors', 'City Runners'],
+    clubs: ['无俱乐部 / 个人活动', '城市羽球社', '城市跑团', '周末骑行队'],
     clubIndex: 0,
     formData: {
       title: '',
-      sportType: 'Basketball',
+      sportType: '羽毛球',
       clubId: null,
       date: '',
       time: '',
@@ -19,6 +19,9 @@ Page({
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setSelected(2)
     }
+  },
+  onBack() {
+    wx.navigateBack()
   },
   onSportChange(e) {
     const index = e.detail.value
@@ -68,23 +71,23 @@ Page({
     const { title, date, time, location, maxParticipants } = this.data.formData
     
     if (!title || !title.trim()) {
-      wx.showToast({ title: 'Please enter event name', icon: 'none' })
+      wx.showToast({ title: '请输入活动名称', icon: 'none' })
       return false
     }
     if (!date) {
-      wx.showToast({ title: 'Please select a date', icon: 'none' })
+      wx.showToast({ title: '请选择日期', icon: 'none' })
       return false
     }
     if (!time) {
-      wx.showToast({ title: 'Please select a time', icon: 'none' })
+      wx.showToast({ title: '请选择时间', icon: 'none' })
       return false
     }
     if (!location || !location.trim()) {
-      wx.showToast({ title: 'Please enter location', icon: 'none' })
+      wx.showToast({ title: '请输入地点', icon: 'none' })
       return false
     }
     if (!maxParticipants || Number(maxParticipants) < 2) {
-      wx.showToast({ title: 'Max participants must be at least 2', icon: 'none' })
+      wx.showToast({ title: '人数需至少 2 人', icon: 'none' })
       return false
     }
     
@@ -92,7 +95,7 @@ Page({
     const selectedDate = new Date(`${date} ${time}`)
     const now = new Date()
     if (selectedDate < now) {
-      wx.showToast({ title: 'Event date cannot be in the past', icon: 'none' })
+      wx.showToast({ title: '时间不能早于现在', icon: 'none' })
       return false
     }
     
@@ -103,19 +106,19 @@ Page({
       return
     }
     
-    wx.showLoading({ title: 'Publishing...' })
+    wx.showLoading({ title: '发布中...' })
     
     // Simulate API call
     setTimeout(() => {
       wx.hideLoading()
       wx.showToast({
-        title: 'Event published!',
+        title: '活动已发布',
         icon: 'success',
         duration: 2000
       })
       
       setTimeout(() => {
-        wx.switchTab({ url: '/pages/events/index' })
+        wx.navigateTo({ url: '/pages/events/detail?id=new' })
       }, 2000)
     }, 1000)
   }

@@ -162,6 +162,12 @@
   color: #ffffff;
 }
 
+.btn-join[disabled] {
+  opacity: 0.5;
+  background-color: #a5c8f5;
+  color: #ffffff;
+}
+
 .btn-joined {
   background-color: rgba(40, 167, 69, 0.2);
   color: #28a745;

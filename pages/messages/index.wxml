@@ -2,7 +2,7 @@
   <!-- Top Bar -->
   <view class="top-bar">
     <view class="spacer"></view>
-    <text class="h3 font-bold text-dark">Messages</text>
+    <text class="h3 font-bold text-dark">消息</text>
     <view class="add-btn" bindtap="onNewMessage">
       <text class="add-icon">+</text>
     </view>
@@ -12,7 +12,7 @@
   <view class="search-container">
     <view class="search-bar">
       <text class="search-icon">🔍</text>
-      <input class="search-input" placeholder="Search Conversations" />
+      <input class="search-input" placeholder="搜索会话" />
     </view>
   </view>
 

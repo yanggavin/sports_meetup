@@ -4,55 +4,55 @@ Page({
       {
         id: 'conv1',
         type: 'club',
-        avatar: '/assets/club-runners.png',
-        name: 'Downtown Runners Club',
-        lastMessage: 'Great run today everyone!',
-        timestamp: '10:45 AM',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=Run',
+        name: '城市跑团',
+        lastMessage: '今天的配速刚刚好，周三再约？',
+        timestamp: '10:45',
         unreadCount: 2
       },
       {
         id: 'conv2',
         type: 'user',
-        avatar: '/assets/user2.png',
-        name: 'Sarah Lee',
-        lastMessage: 'Are we still on for tomorrow?',
-        timestamp: '5m ago',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=SL',
+        name: '李青',
+        lastMessage: '明天活动还可以报名吗？',
+        timestamp: '5分钟前',
         unreadCount: 1
       },
       {
         id: 'conv3',
         type: 'event',
-        avatar: '/assets/event-hiking.png',
-        name: 'Saturday Morning Hike',
-        lastMessage: 'Don\'t forget to bring water.',
-        timestamp: 'Yesterday',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=Hike',
+        name: '周六晨间徒步',
+        lastMessage: '别忘了带水和登山杖',
+        timestamp: '昨天',
         unreadCount: 0
       },
       {
         id: 'conv4',
         type: 'system',
-        avatar: '/assets/system.png',
-        name: 'Sport Meetup Announcements',
-        lastMessage: 'New features are now live! Check them out.',
-        timestamp: 'Tue',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=SYS',
+        name: '系统通知',
+        lastMessage: '你已成功加入“周末羽毛球友谊赛”。',
+        timestamp: '周二',
         unreadCount: 0
       },
       {
         id: 'conv5',
         type: 'user',
-        avatar: '/assets/user3.png',
-        name: 'Alex Chen',
-        lastMessage: 'Awesome, thanks!',
-        timestamp: 'Mon',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=AC',
+        name: '陈立',
+        lastMessage: '好的，活动见！',
+        timestamp: '周一',
         unreadCount: 0
       },
       {
         id: 'conv6',
         type: 'club',
-        avatar: '/assets/club-cycling.png',
-        name: 'Weekend Cycling Club',
-        lastMessage: 'You: Let\'s meet at the usual spot.',
-        timestamp: '10/28/23',
+        avatar: 'https://dummyimage.com/120x120/f6f7f8/2f85ee&text=Ride',
+        name: '周末骑行队',
+        lastMessage: '你：老地方集合可以吗？',
+        timestamp: '10/28',
         unreadCount: 0
       }
     ]
@@ -67,6 +67,6 @@ Page({
     wx.navigateTo({ url: `/pages/messages/thread?id=${id}` })
   },
   onNewMessage() {
-    wx.showToast({ title: 'New message', icon: 'none' })
+    wx.showToast({ title: '新对话即将上线', icon: 'none' })
   }
 })

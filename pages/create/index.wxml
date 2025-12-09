@@ -4,27 +4,27 @@
     <view class="back-btn" bindtap="onBack">
       <text class="back-icon">←</text>
     </view>
-    <text class="h4 font-bold text-dark">Create Event</text>
+    <text class="h4 font-bold text-dark">发布活动</text>
     <view class="spacer-small"></view>
   </view>
 
   <scroll-view scroll-y="true" class="form-container">
     <!-- Event Details Section -->
     <view class="form-section">
-      <text class="section-heading">Event Details</text>
+      <text class="section-heading">活动信息</text>
       
       <view class="form-field">
-        <text class="field-label">Activity Name <text class="required">*</text></text>
+        <text class="field-label">活动名称 <text class="required">*</text></text>
         <input 
           class="field-input" 
-          placeholder="e.g., Morning Basketball Game" 
+          placeholder="例如：周末羽毛球活动" 
           value="{{formData.title}}"
           bindinput="onTitleInput"
         />
       </view>
 
       <view class="form-field">
-        <text class="field-label">Activity Type <text class="required">*</text></text>
+        <text class="field-label">活动类型 <text class="required">*</text></text>
         <picker mode="selector" range="{{sports}}" value="{{sportIndex}}" bindchange="onSportChange">
           <view class="field-picker">
             <text class="picker-text">{{sports[sportIndex]}}</text>
@@ -34,7 +34,7 @@
       </view>
 
       <view class="form-field">
-        <text class="field-label">Affiliated Club (Optional)</text>
+        <text class="field-label">所属俱乐部（可选）</text>
         <picker mode="selector" range="{{clubs}}" value="{{clubIndex}}" bindchange="onClubChange">
           <view class="field-picker">
             <text class="picker-text">{{clubs[clubIndex]}}</text>
@@ -46,35 +46,35 @@
 
     <!-- Logistics Section -->
     <view class="form-section">
-      <text class="section-heading">Logistics</text>
+      <text class="section-heading">时间与地点</text>
       
       <view class="form-row">
         <view class="form-field half">
-          <text class="field-label">Date <text class="required">*</text></text>
+          <text class="field-label">日期 <text class="required">*</text></text>
           <picker mode="date" value="{{formData.date}}" bindchange="onDateChange">
             <view class="field-picker">
-              <text class="picker-text">{{formData.date || 'Select date'}}</text>
+              <text class="picker-text">{{formData.date || '选择日期'}}</text>
             </view>
           </picker>
         </view>
 
         <view class="form-field half">
-          <text class="field-label">Time <text class="required">*</text></text>
+          <text class="field-label">时间 <text class="required">*</text></text>
           <picker mode="time" value="{{formData.time}}" bindchange="onTimeChange">
             <view class="field-picker">
-              <text class="picker-text">{{formData.time || 'Select time'}}</text>
+              <text class="picker-text">{{formData.time || '选择时间'}}</text>
             </view>
           </picker>
         </view>
       </view>
 
       <view class="form-field">
-        <text class="field-label">Location <text class="required">*</text></text>
+        <text class="field-label">地点 <text class="required">*</text></text>
         <view class="field-input-with-icon">
           <text class="input-icon">📍</text>
           <input 
             class="field-input-icon" 
-            placeholder="Enter address or landmark" 
+            placeholder="例如：世纪公园羽毛球中心" 
             value="{{formData.location}}"
             bindinput="onLocationInput"
           />
@@ -82,11 +82,11 @@
       </view>
 
       <view class="form-field">
-        <text class="field-label">Max Participants <text class="required">*</text></text>
+        <text class="field-label">最多参加人数 <text class="required">*</text></text>
         <input 
           class="field-input" 
           type="number" 
-          placeholder="e.g., 10" 
+          placeholder="至少 2 人" 
           value="{{formData.maxParticipants}}"
           bindinput="onMaxParticipantsInput"
         />
@@ -95,13 +95,13 @@
 
     <!-- Description Section -->
     <view class="form-section">
-      <text class="section-heading">Description</text>
+      <text class="section-heading">活动描述</text>
       
       <view class="form-field">
-        <text class="field-label">Activity Description (Optional)</text>
+        <text class="field-label">活动说明（可选）</text>
         <textarea 
           class="field-textarea" 
-          placeholder="Add details like skill level, what to bring, rules, etc." 
+          placeholder="可填写规则、水平要求、自带装备、集合点等" 
           value="{{formData.description}}"
           bindinput="onDescriptionInput"
         />
@@ -115,7 +115,7 @@
   <!-- Floating Publish Button -->
   <view class="publish-bar">
     <button class="btn-publish" bindtap="onPublish">
-      <text>Publish Event</text>
+      <text>发布活动</text>
     </button>
   </view>
 </view>

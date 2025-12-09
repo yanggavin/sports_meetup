@@ -4,7 +4,7 @@
     <view class="back-btn">
       <text class="back-icon">←</text>
     </view>
-    <text class="h4 font-bold text-dark">My Profile</text>
+    <text class="h4 font-bold text-dark">我的</text>
     <view class="settings-btn" bindtap="onSettings">
       <text class="settings-icon">⚙</text>
     </view>
@@ -21,7 +21,7 @@
         </view>
       </view>
       <button class="btn-edit-profile" bindtap="onEditProfile">
-        <text>Edit Profile</text>
+        <text>编辑资料</text>
       </button>
     </view>
 
@@ -29,25 +29,25 @@
     <view class="stats-container">
       <view class="stat-card">
         <text class="stat-number">{{user.stats.joinedActivities}}</text>
-        <text class="stat-label">Joined Activities</text>
+        <text class="stat-label">参加活动</text>
       </view>
       <view class="stat-card">
         <text class="stat-number">{{user.stats.clubs}}</text>
-        <text class="stat-label">Clubs</text>
+        <text class="stat-label">俱乐部</text>
       </view>
       <view class="stat-card">
         <text class="stat-number">{{user.stats.friends}}</text>
-        <text class="stat-label">Friends</text>
+        <text class="stat-label">好友</text>
       </view>
     </view>
 
     <!-- Favorite Sports -->
     <view class="section">
-      <text class="section-title">Favorite Sports</text>
+      <text class="section-title">常参加的运动</text>
       <view class="sports-tags">
         <view wx:for="{{user.favoriteSports}}" wx:key="name" class="sport-tag">
           <text class="sport-icon">{{item.icon}}</text>
-          <text class="sport-name">{{item.name}} · {{item.count}} times</text>
+          <text class="sport-name">{{item.name}} · {{item.count}} 次</text>
         </view>
       </view>
     </view>
@@ -55,8 +55,8 @@
     <!-- My Organized Events -->
     <view class="section">
       <view class="section-header">
-        <text class="section-title">My Organized Events</text>
-        <text class="view-all-link" bindtap="onViewAllEvents">View All</text>
+        <text class="section-title">我发起的活动</text>
+        <text class="view-all-link" bindtap="onViewAllEvents">查看全部</text>
       </view>
       <view class="event-list-profile">
         <block wx:for="{{user.organizedEvents}}" wx:key="id">
@@ -77,8 +77,8 @@
     <!-- My Joined Clubs -->
     <view class="section">
       <view class="section-header">
-        <text class="section-title">My Joined Clubs</text>
-        <text class="view-all-link" bindtap="onViewAllClubs">View All</text>
+        <text class="section-title">我加入的俱乐部</text>
+        <text class="view-all-link" bindtap="onViewAllClubs">查看全部</text>
       </view>
       <view class="club-list-profile">
         <block wx:for="{{user.joinedClubs}}" wx:key="id">

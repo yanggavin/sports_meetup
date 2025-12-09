@@ -4,7 +4,7 @@
     <view class="back-btn" bindtap="onBack">
       <text class="back-icon">←</text>
     </view>
-    <text class="h4 font-bold text-dark">Event Details</text>
+    <text class="h4 font-bold text-dark">活动详情</text>
     <view class="more-btn">
       <text class="more-icon">⋯</text>
     </view>
@@ -19,7 +19,10 @@
       <view class="sport-icon-large">
         <text class="sport-icon-text-large">{{event.sportIcon}}</text>
       </view>
-      <text class="event-title-text">{{event.title}}</text>
+      <view class="col flex-1 gap-8">
+        <text class="event-title-text">{{event.title}}</text>
+        <view class="status-chip {{event.statusClass}}">{{event.statusLabel}}</view>
+      </view>
     </view>
   </view>
 
@@ -28,13 +31,13 @@
     <view class="row items-center gap-16 flex-1">
       <image class="organizer-avatar" src="{{event.organizerAvatar}}" mode="aspectFill"></image>
       <view class="flex-1">
-        <text class="organizer-label">Organizer</text>
+        <text class="organizer-label">组织者</text>
         <text class="organizer-name">{{event.organizer}}</text>
       </view>
     </view>
     <button class="btn-message" bindtap="onMessageOrganizer">
       <text class="message-icon">💬</text>
-      <text>Message</text>
+      <text>私信</text>
     </button>
   </view>
 
@@ -55,45 +58,56 @@
         <text class="info-text">{{event.location}}</text>
         <text class="info-subtext">{{event.address}}</text>
       </view>
-      <text class="map-link" bindtap="onOpenMap">Map</text>
+      <text class="map-link" bindtap="onOpenMap">在地图中打开</text>
+    </view>
+  </view>
+
+  <!-- Club Block -->
+  <view wx:if="{{event.clubName}}" class="club-section" bindtap="onViewClub">
+    <view class="club-card">
+      <view class="club-meta">
+        <text class="club-label">所属俱乐部</text>
+        <text class="club-name">{{event.clubName}}</text>
+      </view>
+      <text class="club-link">查看俱乐部 ›</text>
     </view>
   </view>
 
   <!-- Participants -->
   <view class="participants-section">
     <view class="row items-center justify-between mb-16">
-      <text class="section-title">Participants ({{event.participants}}/{{event.maxParticipants}})</text>
-      <text class="view-all-link" bindtap="onViewAllParticipants">View All</text>
+      <text class="section-title">已参加 {{event.participants}}/{{event.maxParticipants}}</text>
+      <text class="view-all-link" bindtap="onViewAllParticipants">查看全部</text>
     </view>
     <view class="participants-avatars row items-center gap-16">
       <view class="avatar-stack">
         <image wx:for="{{event.participantAvatars}}" wx:key="index" class="participant-avatar" src="{{item}}" mode="aspectFill" style="margin-left: {{index > 0 ? '-24rpx' : '0'}}; z-index: {{100 - index}}"></image>
-        <view class="participant-more" style="margin-left: -24rpx">+{{event.participants - event.participantAvatars.length}}</view>
+        <view wx:if="{{event.participants > event.participantAvatars.length}}" class="participant-more" style="margin-left: -24rpx">+{{event.participants - event.participantAvatars.length}}</view>
       </view>
     </view>
   </view>
 
   <!-- Description -->
   <view class="description-section">
-    <text class="section-title mb-16">Details</text>
+    <text class="section-title mb-16">活动详情</text>
     <text class="description-text">{{event.description}}</text>
   </view>
 
   <!-- Organizer Tools (Only for event owner) -->
   <view wx:if="{{event.isOrganizer}}" class="organizer-tools">
-    <text class="section-title mb-16">Organizer Tools</text>
+    <text class="section-title mb-16">组织者工具</text>
     <view class="tools-grid">
       <button class="tool-btn" bindtap="onEditEvent">
         <text class="tool-icon">✏️</text>
-        <text>Edit Event</text>
+        <text>编辑活动</text>
       </button>
       <button class="tool-btn tool-btn-danger" bindtap="onCancelEvent">
         <text class="tool-icon">❌</text>
-        <text>Cancel Event</text>
+        <text>取消活动</text>
       </button>
       <button class="tool-btn tool-btn-full" bindtap="onBroadcast">
         <text class="tool-icon">📢</text>
-        <text>Broadcast Notification</text>
+        <text>群发通知</text>
       </button>
     </view>
   </view>
@@ -103,7 +117,7 @@
 
   <!-- Sticky Action Bar -->
   <view class="action-bar">
-    <button class="btn-action-primary" bindtap="onJoin">{{event.joined ? 'Leave Event' : 'Join Event'}}</button>
+    <button class="btn-action-primary" bindtap="onJoin" disabled="{{!event.joined && event.disableJoin}}">{{event.joined ? '退出活动' : '参加活动'}}</button>
     <button class="btn-action-share" bindtap="onShare">
       <text class="share-icon">↗</text>
     </button>

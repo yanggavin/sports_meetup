@@ -20,63 +20,66 @@ Page({
     const sampleClubs = {
       c1: {
         id: 'c1',
-        name: 'City Badminton Enthusiasts',
-        tagline: 'Serve, Smash, Connect!',
-        location: 'Shanghai, Xuhui',
+        name: '城市羽球爱好者',
+        tagline: 'Serve · Smash · Connect',
+        location: '上海 · 徐汇',
         members: 150,
         upcomingEvents: 6,
-        description: 'Welcome to the City Badminton Enthusiasts! We are a friendly and active club for players of all skill levels, from complete beginners to advanced competitors. Our mission is to create a fun, supportive environment where everyone can enjoy the game, improve their skills, and connect with fellow badminton lovers. We organize regular weekly social games, training sessions, and friendly tournaments.',
+        description: '友好的羽球社群，欢迎从入门到高手的每一位球友。我们每周都有社交球局、训练营和小型友谊赛，提供陪练与分组对抗，帮助大家提升球技、结交伙伴。',
         images: [
-          '/assets/badminton1.jpg',
-          '/assets/badminton2.jpg',
-          '/assets/badminton3.jpg',
-          '/assets/badminton4.jpg'
+          'https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?w=1200',
+          'https://images.unsplash.com/photo-1574629173115-1c0931a9b5ba?w=1200',
+          'https://images.unsplash.com/photo-1500482176473-cc0bbfd06a1d?w=1200',
+          'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1200'
         ],
         currentImageIndex: 0,
-        avatar: '/assets/club-badminton.png',
+        avatar: 'https://dummyimage.com/300x300/f6f7f8/2f85ee&text=Badminton',
         events: [
           {
             id: 'e1',
-            title: 'Weekly Social Game',
-            date: 'Sat, 20 Jul',
-            time: '7:00 PM',
-            location: 'Xuhui Sports Center'
+            title: '周六社交球局',
+            date: '12月14日',
+            time: '19:00',
+            location: '徐汇体育中心'
           },
           {
             id: 'e2',
-            title: 'Beginner\'s Training Session',
-            date: 'Sun, 21 Jul',
-            time: '10:00 AM',
-            location: 'Jing\'an Gymnasium'
+            title: '入门训练营',
+            date: '12月15日',
+            time: '10:00',
+            location: '静安体育馆'
           },
           {
             id: 'e3',
-            title: 'Doubles Mini-Tournament',
-            date: 'Sat, 27 Jul',
-            time: '2:00 PM',
-            location: 'Luwan Badminton Hall'
+            title: '双打迷你赛',
+            date: '12月21日',
+            time: '14:00',
+            location: '卢湾羽毛球馆'
           }
         ],
         joined: false
       },
       c2: {
         id: 'c2',
-        name: 'Downtown Tennis Crew',
-        tagline: 'Play Hard, Have Fun!',
-        location: 'City Courts, SF',
+        name: '中心网球社',
+        tagline: 'Play Hard · Have Fun',
+        location: '城市体育公园',
         members: 120,
         upcomingEvents: 3,
-        description: 'Join our vibrant tennis community! We welcome players of all levels for friendly matches and competitive league play.',
-        images: ['/assets/tennis1.jpg', '/assets/tennis2.jpg'],
+        description: '欢迎所有水平的球友加入，每周固定双打练习与友谊赛。',
+        images: [
+          'https://images.unsplash.com/photo-1517467139951-f5a925c9f9de?w=1200',
+          'https://images.unsplash.com/photo-1502904550040-7534597429ae?w=1200'
+        ],
         currentImageIndex: 0,
-        avatar: '/assets/club-tennis.png',
+        avatar: 'https://dummyimage.com/300x300/f6f7f8/2f85ee&text=Tennis',
         events: [
           {
             id: 'e4',
-            title: 'Sunday Doubles',
-            date: 'Sun, 14 Jul',
-            time: '9:00 AM',
-            location: 'City Tennis Courts'
+            title: '周日双打局',
+            date: '12月22日',
+            time: '09:00',
+            location: '城市网球场'
           }
         ],
         joined: true
@@ -97,13 +100,10 @@ Page({
       'club.joined': joined,
       'club.members': members
     })
-    wx.showToast({
-      title: joined ? 'Successfully joined!' : 'Left the club',
-      icon: 'none'
-    })
+    wx.showToast({ title: joined ? '已加入俱乐部' : '已退出俱乐部', icon: 'none' })
   },
   onMessageAdmin() {
-    wx.showToast({ title: 'Opening chat with admin...', icon: 'none' })
+    wx.navigateTo({ url: '/pages/messages/thread?id=club-admin' })
   },
   onEventTap(e) {
     const eventId = e.currentTarget.dataset.id

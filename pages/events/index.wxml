@@ -1,12 +1,12 @@
 <view class="page">
-  <!-- Top App Bar -->
+  <!-- 顶部标题 -->
   <view class="top-bar">
     <view class="search-icon"></view>
-    <text class="h3 font-bold text-dark">Events</text>
+    <text class="h3 font-bold text-dark">活动</text>
     <view class="spacer"></view>
   </view>
 
-  <!-- Sport Filter Chips -->
+  <!-- 运动类型筛选 -->
   <scroll-view scroll-x="true" class="filter-container">
     <view class="filter-chips">
       <block wx:for="{{sportFilters}}" wx:key="name">
@@ -18,7 +18,7 @@
     </view>
   </scroll-view>
 
-  <!-- Date Filter Chips -->
+  <!-- 日期筛选 -->
   <scroll-view scroll-x="true" class="filter-container border-bottom">
     <view class="filter-chips">
       <block wx:for="{{dateFilters}}" wx:key="name">
@@ -29,7 +29,7 @@
     </view>
   </scroll-view>
 
-  <!-- Events List -->
+  <!-- 活动列表 -->
   <view class="events-list">
     <block wx:for="{{events}}" wx:key="id">
       <view class="event-card" bindtap="onViewDetail" data-id="{{item.id}}">
@@ -40,11 +40,11 @@
             </view>
             <view class="flex-1">
               <text class="event-title">{{item.title}}</text>
-              <text class="event-club">{{item.clubName}}</text>
+              <text class="event-club">{{item.clubName || '公开活动'}}</text>
             </view>
           </view>
-          <button class="btn {{item.joined ? 'btn-joined' : 'btn-join'}}" catchtap="onJoinTap" data-id="{{item.id}}">
-            <text>{{item.joined ? 'Joined' : 'Join'}}</text>
+          <button class="btn {{item.joined ? 'btn-joined' : 'btn-join'}}" catchtap="onJoinTap" data-id="{{item.id}}" disabled="{{!item.joined && item.disableJoin}}">
+            <text>{{item.joined ? '退出' : '参加'}}</text>
           </button>
         </view>
         <view class="event-details">
@@ -58,12 +58,12 @@
           </view>
           <view class="detail-row">
             <text class="detail-icon">👥</text>
-            <text>{{item.participants}}/{{item.maxParticipants}} Joined • </text>
-            <text class="{{item.status}}">{{item.statusText}}</text>
+            <text>{{item.participants}}/{{item.maxParticipants}} 已报名 • </text>
+            <text class="{{item.statusClass}}">{{item.statusLabel}}</text>
           </view>
           <view class="detail-row">
             <text class="detail-icon">👤</text>
-            <text>Organized by {{item.organizer}}</text>
+            <text>组织者：{{item.organizer}}</text>
           </view>
         </view>
       </view>
@@ -74,8 +74,8 @@
       <view class="empty-icon-container">
         <text class="empty-icon">📅</text>
       </view>
-      <text class="empty-title">No Events Found</text>
-      <text class="empty-subtitle">Try adjusting your filters or check back later.</text>
+      <text class="empty-title">暂无活动</text>
+      <text class="empty-subtitle">试试调整筛选条件或稍后再来</text>
     </view>
   </view>
 
