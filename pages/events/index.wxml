@@ -29,8 +29,14 @@
     </view>
   </scroll-view>
 
+  <!-- Loading State -->
+  <view wx:if="{{loading}}" class="loading-state">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
   <!-- 活动列表 -->
-  <view class="events-list">
+  <view wx:if="{{!loading}}" class="events-list">
     <block wx:for="{{events}}" wx:key="id">
       <view class="event-card" bindtap="onViewDetail" data-id="{{item.id}}">
         <view class="event-header">
@@ -81,4 +87,6 @@
 
   <!-- Custom Tab Bar space -->
   <view style="height: 160rpx"></view>
+
+  <custom-tab-bar></custom-tab-bar>
 </view>

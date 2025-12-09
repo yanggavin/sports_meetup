@@ -10,7 +10,13 @@
     </view>
   </view>
 
-  <scroll-view scroll-y="true" class="profile-container">
+  <!-- Loading State -->
+  <view wx:if="{{loading}}" class="loading-state">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <scroll-view wx:if="{{!loading}}" scroll-y="true" class="profile-container">
     <!-- Profile Header -->
     <view class="profile-header">
       <view class="profile-info">
@@ -99,4 +105,6 @@
     <!-- Bottom Spacer -->
     <view style="height: 160rpx"></view>
   </scroll-view>
+
+  <custom-tab-bar></custom-tab-bar>
 </view>

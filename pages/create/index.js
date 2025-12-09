@@ -15,11 +15,7 @@ Page({
       description: ''
     }
   },
-  onShow() {
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setSelected(2)
-    }
-  },
+
   onBack() {
     wx.navigateBack()
   },

@@ -16,25 +16,35 @@
     </view>
   </view>
 
-  <!-- Conversations List -->
-  <view class="conversations-list">
-    <block wx:for="{{conversations}}" wx:key="id">
-      <view class="conversation-item" bindtap="onConversationTap" data-id="{{item.id}}">
-        <image class="conv-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
-        <view class="conv-content">
-          <text class="conv-name">{{item.name}}</text>
-          <text class="conv-preview">{{item.lastMessage}}</text>
-        </view>
-        <view class="conv-meta">
-          <text class="conv-time">{{item.timestamp}}</text>
-          <view wx:if="{{item.unreadCount > 0}}" class="unread-badge">
-            <text>{{item.unreadCount}}</text>
+  <!-- Loading State -->
+  <view wx:if="{{loading}}" class="loading-state">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view wx:if="{{!loading}}">
+    <!-- Conversations List -->
+    <view class="conversations-list">
+      <block wx:for="{{conversations}}" wx:key="id">
+        <view class="conversation-item" bindtap="onConversationTap" data-id="{{item.id}}">
+          <image class="conv-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+          <view class="conv-content">
+            <text class="conv-name">{{item.name}}</text>
+            <text class="conv-preview">{{item.lastMessage}}</text>
+          </view>
+          <view class="conv-meta">
+            <text class="conv-time">{{item.timestamp}}</text>
+            <view wx:if="{{item.unreadCount > 0}}" class="unread-badge">
+              <text>{{item.unreadCount}}</text>
+            </view>
           </view>
         </view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
 
   <!-- Bottom Spacer -->
   <view style="height: 160rpx"></view>
+
+  <custom-tab-bar></custom-tab-bar>
 </view>

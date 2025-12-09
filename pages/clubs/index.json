@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "俱乐部"
+  "navigationBarTitleText": "俱乐部",
+  "usingComponents": {
+    "custom-tab-bar": "../../custom-tab-bar/index"
+  }
 }

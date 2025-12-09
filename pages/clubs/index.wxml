@@ -38,38 +38,48 @@
     </view>
   </scroll-view>
 
-  <!-- Clubs List -->
-  <view class="clubs-list">
-    <block wx:for="{{clubs}}" wx:key="id">
-      <view class="club-card" bindtap="onClubTap" data-id="{{item.id}}">
-        <view class="club-header">
-          <image class="club-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
-          <view class="club-info flex-1">
-            <text class="club-name">{{item.name}}</text>
-            <text class="club-description">{{item.description}}</text>
+  <!-- Loading State -->
+  <view wx:if="{{loading}}" class="loading-state">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view wx:if="{{!loading}}">
+    <!-- Clubs List -->
+    <view class="clubs-list">
+      <block wx:for="{{clubs}}" wx:key="id">
+        <view class="club-card" bindtap="onClubTap" data-id="{{item.id}}">
+          <view class="club-header">
+            <image class="club-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+            <view class="club-info flex-1">
+              <text class="club-name">{{item.name}}</text>
+              <text class="club-description">{{item.description}}</text>
+            </view>
+          </view>
+          <view class="club-meta">
+            <view class="meta-item">
+              <text class="meta-icon">📍</text>
+              <text class="meta-text">{{item.location}}</text>
+            </view>
+            <view class="meta-item">
+              <text class="meta-icon">👥</text>
+              <text class="meta-text">{{item.members}} 名成员</text>
+            </view>
+            <view class="meta-item">
+              <text class="meta-icon">📅</text>
+              <text class="meta-text">{{item.events}} 个即将开始的活动</text>
+            </view>
+            <button class="btn-club-action {{item.joined ? 'btn-club-joined' : 'btn-club-join'}}" catchtap="onJoinClub" data-id="{{item.id}}">
+              <text>{{item.joined ? '已加入' : '加入俱乐部'}}</text>
+            </button>
           </view>
         </view>
-        <view class="club-meta">
-          <view class="meta-item">
-            <text class="meta-icon">📍</text>
-            <text class="meta-text">{{item.location}}</text>
-          </view>
-          <view class="meta-item">
-            <text class="meta-icon">👥</text>
-            <text class="meta-text">{{item.members}} 名成员</text>
-          </view>
-          <view class="meta-item">
-            <text class="meta-icon">📅</text>
-            <text class="meta-text">{{item.events}} 个即将开始的活动</text>
-          </view>
-          <button class="btn-club-action {{item.joined ? 'btn-club-joined' : 'btn-club-join'}}" catchtap="onJoinClub" data-id="{{item.id}}">
-            <text>{{item.joined ? '已加入' : '加入俱乐部'}}</text>
-          </button>
-        </view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
 
   <!-- Bottom Spacer -->
   <view style="height: 160rpx"></view>
+
+  <custom-tab-bar></custom-tab-bar>
 </view>

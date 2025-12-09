@@ -1,3 +1,5 @@
+const { getEvents } = require('../../services/api');
+
 Page({
   data: {
     sportFilters: [
@@ -19,69 +21,22 @@ Page({
       { name: '周日', selected: false },
       { name: '下周', selected: false }
     ],
-    events: [
-      {
-        id: 'e1',
-        title: '周末羽毛球友谊赛',
-        clubName: '城市羽球社',
-        dateTime: '12月10日 19:30',
-        location: '世纪公园羽毛球中心',
-        participants: 8,
-        maxParticipants: 12,
-        organizer: '陈晨',
-        sportIcon: '🏸',
-        joined: false,
-        status: 'active'
-      },
-      {
-        id: 'e2',
-        title: '周日清晨城市慢跑',
-        clubName: '城市跑团',
-        dateTime: '12月11日 06:30',
-        location: '滨江绿道集合点',
-        participants: 40,
-        maxParticipants: 40,
-        organizer: '赵敏',
-        sportIcon: '🏃',
-        joined: true,
-        status: 'active'
-      },
-      {
-        id: 'e3',
-        title: '周末城市夜骑',
-        clubName: '夜骑联盟',
-        dateTime: '12月12日 20:00',
-        location: '市民广场喷泉旁',
-        participants: 15,
-        maxParticipants: 20,
-        organizer: '李想',
-        sportIcon: '🚴',
-        joined: false,
-        status: 'cancelled'
-      },
-      {
-        id: 'e4',
-        title: '冬季徒步体验营',
-        clubName: '山野探索俱乐部',
-        dateTime: '12月08日 09:00',
-        location: '灵山登山口',
-        participants: 24,
-        maxParticipants: 24,
-        organizer: '高远',
-        sportIcon: '🥾',
-        joined: false,
-        status: 'completed'
-      }
-    ]
+    events: [],
+    loading: true
   },
   onLoad() {
-    this.setData({ events: this.data.events.map(ev => this.decorateEvent(ev)) })
+    this.fetchEvents();
   },
-  onShow() {
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setSelected(0)
-    }
+  fetchEvents() {
+    this.setData({ loading: true });
+    getEvents().then(events => {
+      this.setData({
+        events: events.map(ev => this.decorateEvent(ev)),
+        loading: false
+      });
+    });
   },
+
   onSearchTap() {
     wx.showToast({ title: '搜索即将上线', icon: 'none' })
   },

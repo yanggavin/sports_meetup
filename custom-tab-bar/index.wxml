@@ -1,32 +1,16 @@
 <view class="tabbar">
-  <view class="tab-item" data-index="0" bindtap="onTabTap">
-    <view class="tab-icon {{selected===0?'active':''}}">
-      <text class="icon">🏃</text>
-    </view>
-    <text class="tab-text {{selected===0?'active':''}}">活动</text>
-  </view>
-  <view class="tab-item" data-index="1" bindtap="onTabTap">
-    <view class="tab-icon {{selected===1?'active':''}}">
-      <text class="icon">👥</text>
-    </view>
-    <text class="tab-text {{selected===1?'active':''}}">俱乐部</text>
-  </view>
-  <view class="tab-item" data-index="2" bindtap="onTabTap">
-    <view class="tab-icon-create {{selected===2?'active':''}}">
-      <text class="icon-plus">+</text>
-    </view>
-    <text class="tab-text {{selected===2?'active':''}}">发布</text>
-  </view>
-  <view class="tab-item" data-index="3" bindtap="onTabTap">
-    <view class="tab-icon {{selected===3?'active':''}}">
-      <text class="icon">💬</text>
-    </view>
-    <text class="tab-text {{selected===3?'active':''}}">消息</text>
-  </view>
-  <view class="tab-item" data-index="4" bindtap="onTabTap">
-    <view class="tab-icon {{selected===4?'active':''}}">
-      <text class="icon">👤</text>
-    </view>
-    <text class="tab-text {{selected===4?'active':''}}">我的</text>
+  <view wx:for="{{list}}" wx:key="index" class="tab-item" data-index="{{index}}" bindtap="onTabTap">
+    <block wx:if="{{index === 2}}">
+      <view class="tab-icon-create">
+        <text class="icon-plus">{{item.iconPath}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="tab-icon {{selected===index?'active':''}}">
+        <text class="icon">{{selected === index ? item.selectedIconPath : item.iconPath}}</text>
+      </view>
+    </block>
+    <text class="tab-text {{selected===index?'active':''}}">{{item.text}}</text>
   </view>
 </view>
+

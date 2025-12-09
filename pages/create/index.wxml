@@ -118,4 +118,5 @@
       <text>发布活动</text>
     </button>
   </view>
+  <custom-tab-bar></custom-tab-bar>
 </view>

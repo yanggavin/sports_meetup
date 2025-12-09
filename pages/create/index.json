@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "发布活动"
+  "navigationBarTitleText": "发布活动",
+  "usingComponents": {
+    "custom-tab-bar": "../../custom-tab-bar/index"
+  }
 }
