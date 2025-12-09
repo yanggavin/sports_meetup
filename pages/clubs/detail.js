@@ -27,10 +27,10 @@ Page({
         upcomingEvents: 6,
         description: '友好的羽球社群，欢迎从入门到高手的每一位球友。我们每周都有社交球局、训练营和小型友谊赛，提供陪练与分组对抗，帮助大家提升球技、结交伙伴。',
         images: [
-          'https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?w=1200',
-          'https://images.unsplash.com/photo-1574629173115-1c0931a9b5ba?w=1200',
-          'https://images.unsplash.com/photo-1500482176473-cc0bbfd06a1d?w=1200',
-          'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1200'
+          'https://images.pexels.com/photos/3660204/pexels-photo-3660204.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/6253866/pexels-photo-6253866.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/6253904/pexels-photo-6253904.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/6253914/pexels-photo-6253914.jpeg?auto=compress&cs=tinysrgb&w=1600'
         ],
         currentImageIndex: 0,
         avatar: 'https://dummyimage.com/300x300/f6f7f8/2f85ee&text=Badminton',
@@ -68,8 +68,10 @@ Page({
         upcomingEvents: 3,
         description: '欢迎所有水平的球友加入，每周固定双打练习与友谊赛。',
         images: [
-          'https://images.unsplash.com/photo-1517467139951-f5a925c9f9de?w=1200',
-          'https://images.unsplash.com/photo-1502904550040-7534597429ae?w=1200'
+          'https://images.pexels.com/photos/5069136/pexels-photo-5069136.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/1619847/pexels-photo-1619847.jpeg?auto=compress&cs=tinysrgb&w=1600',
+          'https://images.pexels.com/photos/226587/pexels-photo-226587.jpeg?auto=compress&cs=tinysrgb&w=1600'
         ],
         currentImageIndex: 0,
         avatar: 'https://dummyimage.com/300x300/f6f7f8/2f85ee&text=Tennis',
